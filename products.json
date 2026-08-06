@@ -2,27 +2,19 @@
   {
     "name": "Twilight Turbo Handheld Fan",
     "category": "Lifestyle",
-    "price": "499 Taka",
-    "delivery": "100 Taka",
-    "description": "Rechargeable portable turbo fan imported from China with multiple wind speeds."
+    "price": "499৳",
+    "description": "Rechargeable portable turbo fan imported from China."
   },
   {
-    "name": "Premium Ceramic Tea Set",
+    "name": "Premium Travel Tea Set",
     "category": "Food & Nutrition",
-    "price": "1999 Taka",
-    "delivery": "Free Delivery",
-    "description": "Elegant ceramic tea set with travel case."
+    "price": "1999৳",
+    "description": "Elegant premium tea set for modern tea lovers."
   },
   {
-    "name": "Kids Raincoat",
+    "name": "Imported Lifestyle Products",
     "category": "Lifestyle",
-    "price": "350 Taka",
-    "description": "Lightweight waterproof raincoat for children."
-  },
-  {
-    "name": "Premium Raincoat",
-    "category": "Lifestyle",
-    "price": "650 Taka",
-    "description": "Durable waterproof raincoat for daily use."
+    "price": "Contact Us",
+    "description": "Smart imported products selected by Twilight."
   }
 ]
