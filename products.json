@@ -1,1 +1,28 @@
-[{"name":"Twilight Turbo Fan","price":"499 Tk","image":"images/products/fan.jpg","category":"Lifestyle"}]
+[
+  {
+    "name": "Twilight Turbo Handheld Fan",
+    "category": "Lifestyle",
+    "price": "499 Taka",
+    "delivery": "100 Taka",
+    "description": "Rechargeable portable turbo fan imported from China with multiple wind speeds."
+  },
+  {
+    "name": "Premium Ceramic Tea Set",
+    "category": "Food & Nutrition",
+    "price": "1999 Taka",
+    "delivery": "Free Delivery",
+    "description": "Elegant ceramic tea set with travel case."
+  },
+  {
+    "name": "Kids Raincoat",
+    "category": "Lifestyle",
+    "price": "350 Taka",
+    "description": "Lightweight waterproof raincoat for children."
+  },
+  {
+    "name": "Premium Raincoat",
+    "category": "Lifestyle",
+    "price": "650 Taka",
+    "description": "Durable waterproof raincoat for daily use."
+  }
+]

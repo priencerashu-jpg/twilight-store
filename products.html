@@ -1,1 +1,13 @@
-<link rel="stylesheet" href="css/style.css"><h1>Twilight Products</h1><div id="products" class="grid"></div><script src="js/products.js"></script>
+<!DOCTYPE html>
+<html><head><title>Twilight Market Products</title></head>
+<body>
+<h1>Twilight Market</h1>
+<p>🥗 Food & Nutrition — Healthy daily essentials</p>
+<p>🏠 Lifestyle — Smart imported products</p>
+<div id="products"></div>
+<script>
+fetch('products.json').then(r=>r.json()).then(data=>{
+document.getElementById('products').innerHTML=data.map(p=>`<div><h2>${p.name}</h2><p>${p.category}</p><p>${p.price}</p><p>${p.description}</p></div>`).join('');
+});
+</script>
+</body></html>
