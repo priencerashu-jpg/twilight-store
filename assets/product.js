@@ -10,7 +10,6 @@
   document.title = product.name + ' | Twilight Market';
   document.querySelector('[data-product-name]').textContent = product.name;
   document.querySelector('[data-product-short]').textContent = product.shortName;
-  document.querySelector('[data-category]').textContent = product.category;
   document.querySelector('[data-badge]').textContent = product.badge;
   document.querySelector('[data-summary]').textContent = product.summary;
   document.querySelector('[data-delivery]').textContent = product.delivery;
