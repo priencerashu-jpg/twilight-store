@@ -1,5 +1,5 @@
 # Twilight Market
 
-Official static storefront for [twilightmarket.store](https://twilightmarket.store).
+Static storefront for [twilightmarket.store](https://twilightmarket.store), published with GitHub Pages.
 
-The site is deployed with GitHub Pages from the `main` branch.
+The site includes seven product pages, galleries, color and quantity selection, customer delivery fields, and order handoff to two Twilight Market WhatsApp accounts.
