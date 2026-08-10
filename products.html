@@ -1,13 +1,25 @@
 <!DOCTYPE html>
-<html><head><title>Twilight Market Products</title></head>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Explore Twilight Market lifestyle products available across Bangladesh.">
+  <title>Products | Twilight Market</title>
+  <link rel="icon" href="assets/twilight-logo.png" type="image/png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
 <body>
-<h1>Twilight Market</h1>
-<p>🥗 Food & Nutrition — Healthy daily essentials</p>
-<p>🏠 Lifestyle — Smart imported products</p>
-<div id="products"></div>
-<script>
-fetch('products.json').then(r=>r.json()).then(data=>{
-document.getElementById('products').innerHTML=data.map(p=>`<div><h2>${p.name}</h2><p>${p.category}</p><p>${p.price}</p><p>${p.description}</p></div>`).join('');
-});
-</script>
-</body></html>
+  <div class="announcement"><div class="container announcement-inner"><span>Quality-checked imported products</span><span class="announcement-separator"></span><span>Delivery across Bangladesh</span></div></div>
+  <header class="site-header"><div class="container nav-shell"><a class="brand" href="index.html"><img src="assets/twilight-logo.png" alt="Twilight Market"></a><button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu"><span></span><span></span><span></span></button><nav class="site-nav" id="site-nav"><a href="index.html">Home</a><a class="active" href="products.html">Products</a><a href="index.html#categories">Categories</a><a href="about.html">About</a><a href="contact.html">Contact</a></nav><a class="button button-small nav-order" href="https://wa.me/8801740033334" target="_blank" rel="noopener">Order on WhatsApp</a></div></header>
+  <main>
+    <section class="page-hero"><div class="container"><p class="eyebrow">Twilight collection</p><h1>Practical. Beautiful. Reliable.</h1><p>Explore smart imported products selected for everyday comfort and modern family life.</p></div></section>
+    <section class="products section-pad"><div class="container"><div class="product-grid">
+      <article class="product-card product-card-raincoat"><div class="card-badge">Rainy-day essential</div><div class="card-art"><div class="card-circle"></div><div class="product-visual raincoat-visual"><svg viewBox="0 0 360 420" role="img" aria-label="Raincoat illustration"><defs><linearGradient id="coatProduct" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#477865"/><stop offset="1" stop-color="#103f33"/></linearGradient></defs><path d="M134 72c8-29 27-45 46-45s38 16 46 45l-20 25h-52z" fill="#194d3d"/><path d="M119 79l-55 44-38 105 55 22 28-68 2 190h138l2-190 28 68 55-22-38-105-55-44-20 32h-82z" fill="url(#coatProduct)"/><path d="M180 105v267" stroke="#f4d69f" stroke-width="5"/><path d="M120 79c11 22 32 35 60 35s49-13 60-35" fill="none" stroke="#d9b477" stroke-width="4"/></svg></div></div><div class="product-info"><p class="product-category">Lifestyle</p><h3>Premium Raincoat Collection</h3><p>Lightweight waterproof protection for comfortable everyday movement.</p><ul class="feature-list"><li>Waterproof</li><li>Comfortable</li><li>Easy to carry</li></ul><a class="product-link" href="https://wa.me/8801740033334?text=I%20want%20details%20about%20the%20Premium%20Raincoat" target="_blank" rel="noopener">Ask about this product &#8594;</a></div></article>
+      <article class="product-card product-card-fan"><div class="card-badge">Summer favourite</div><div class="card-art"><div class="card-circle"></div><div class="product-visual fan-visual"><svg viewBox="0 0 330 400" role="img" aria-label="Turbo fan illustration"><defs><linearGradient id="fanProduct" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff9ea"/><stop offset="1" stop-color="#cae0d6"/></linearGradient></defs><circle cx="165" cy="138" r="111" fill="url(#fanProduct)" stroke="#f3d99e" stroke-width="8"/><circle cx="165" cy="138" r="88" fill="#174f40"/><path d="M164 137c-42-2-69-23-66-48 2-19 27-20 50-5 20 13 24 34 16 53z" fill="#8fc8b0"/><path d="M165 138c23-36 55-49 74-33 15 13 3 35-20 49-21 12-41 3-54-16z" fill="#69a98f"/><path d="M165 139c20 38 15 71-10 78-19 6-31-16-30-43 1-24 18-37 40-35z" fill="#b7dacb"/><circle cx="165" cy="138" r="20" fill="#f1cf88"/><path d="M142 244h46l19 126h-84z" fill="url(#fanProduct)" stroke="#f3d99e" stroke-width="6"/><rect x="145" y="270" width="40" height="57" rx="12" fill="#194d3d"/></svg></div></div><div class="product-info"><p class="product-category">Lifestyle</p><h3>Rechargeable Turbo Fan</h3><p>Portable, foldable cooling with five speed modes and a digital display.</p><ul class="feature-list"><li>5 speeds</li><li>Rechargeable</li><li>Digital display</li></ul><a class="product-link" href="https://wa.me/8801740033334?text=I%20want%20details%20about%20the%20Turbo%20Fan" target="_blank" rel="noopener">Ask about this product &#8594;</a></div></article>
+    </div></div></section>
+  </main>
+  <footer class="site-footer"><div class="container footer-bottom"><span>&copy; <span id="year">2026</span> Twilight Market</span><span>Delivery across Bangladesh</span></div></footer>
+  <a class="whatsapp-float" href="https://wa.me/8801740033334" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><svg viewBox="0 0 32 32"><path d="M16 3a12.5 12.5 0 0 0-10.7 19L4 29l7.2-1.9A12.5 12.5 0 1 0 16 3zm0 22.7c-1.8 0-3.5-.5-5-1.3l-.4-.2-4.2 1.1 1.1-4.1-.3-.4A10.2 10.2 0 1 1 16 25.7z"/></svg></a>
+  <script src="assets/site.js"></script>
+</body>
+</html>
