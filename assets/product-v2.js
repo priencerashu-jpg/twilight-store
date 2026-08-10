@@ -1,7 +1,7 @@
 (function () {
   var slug = document.body.getAttribute('data-product');
   var product = window.TWILIGHT_PRODUCTS && window.TWILIGHT_PRODUCTS[slug];
-  if (!product) { window.location.href = '../../'; return; }
+  if (!product) { window.location.href = '../../products.html'; return; }
 
   var root = '../../assets/images/';
   var selections = {};
@@ -15,6 +15,7 @@
   document.querySelector('[data-delivery]').textContent = product.delivery;
   document.querySelector('[data-description]').textContent = product.description;
   document.querySelector('[data-price]').textContent = '৳' + product.price.toLocaleString('en-US');
+  document.querySelector('[data-gallery-price]').textContent = '৳' + product.price.toLocaleString('en-US');
   if (product.originalPrice) {
     document.querySelector('[data-original-price]').textContent = '৳' + product.originalPrice.toLocaleString('en-US');
   } else {
@@ -65,6 +66,9 @@
   updateTotal();
 
   document.querySelector('[data-features]').innerHTML = product.features.map(function (item) { return '<p><span>✓</span>' + item + '</p>'; }).join('');
+  document.querySelector('[data-specs]').innerHTML = product.specs.map(function (item) {
+    return '<div><dt>' + item[0] + '</dt><dd>' + item[1] + '</dd></div>';
+  }).join('');
   var accounts = [{number:'8801729624403',display:'+880 1729-624403'},{number:'8801410395694',display:'+880 1410-395694'}];
   document.querySelectorAll('[data-whatsapp]').forEach(function (button, index) {
     button.querySelector('strong').textContent = accounts[index].display;

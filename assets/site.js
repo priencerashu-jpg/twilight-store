@@ -7,6 +7,12 @@
       toggle.setAttribute('aria-expanded', String(!open));
       nav.classList.toggle('open', !open);
     });
+    nav.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        toggle.setAttribute('aria-expanded', 'false');
+        nav.classList.remove('open');
+      });
+    });
   }
   document.querySelectorAll('[data-year]').forEach(function (node) { node.textContent = new Date().getFullYear(); });
 }());

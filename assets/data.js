@@ -1,59 +1,204 @@
 window.TWILIGHT_PRODUCTS = {
   "foldable-turbo-fan": {
-    name: "Foldable Powerful-Wind Turbo Fan", shortName: "Foldable Turbo Fan", category: "Gadgets & Electronics", price: 700, originalPrice: 1000,
-    delivery: "Delivery charge confirmed on WhatsApp", badge: "30% OFF",
-    summary: "A compact 5-speed fan with a 3600mAh rechargeable battery and ultra-quiet brushless motor.",
-    description: "Use it in your hand, on a table or with the included lanyard. The foldable body, digital display and strong airflow make it an easy cooling companion for home, office and travel.",
-    images: ["turbo-fan.webp"], features: ["13,000 r/s high-speed motor", "5 wind-speed modes", "3600mAh rechargeable battery", "Foldable, quiet and portable"],
-    variants: [{name:"Color", options:["Mint Green","White"]}]
-  },
-  "raincoat-turbo-fan-combo": {
-    name: "Raincoat + Turbo Fan Smart Combo", shortName: "Smart Weather Combo", category: "Combo Offer", price: 999,
-    delivery: "Free home delivery across Bangladesh", badge: "FREE DELIVERY",
-    summary: "One waterproof raincoat plus one rechargeable turbo fan in a practical all-weather combo.",
-    description: "Stay comfortable through rain and heat with two useful products in one value set. Select the raincoat and fan colors before sending your order.",
-    images: ["raincoat-fan-combo.webp","turbo-fan.webp","kids-raincoat.webp"], features: ["1 raincoat + 1 turbo fan", "5-speed rechargeable fan", "Lightweight waterproof raincoat", "Nationwide free home delivery"],
-    variants: [{name:"Raincoat Color",options:["Light Blue","Pink"]},{name:"Fan Color",options:["Mint Green","White"]}]
-  },
-  "portable-neck-fan": {
-    name: "Twilight 5-Speed Portable Neck Fan", shortName: "Portable Neck Fan", category: "Gadgets & Electronics", price: 499,
-    delivery: "Delivery charge: ৳100", badge: "SPECIAL PRICE",
-    summary: "A foldable USB-rechargeable fan for handheld, tabletop and neck-worn use.",
-    description: "The digital display, five speed modes, brushless motor and included carrying lanyard make cooling easy wherever you go.",
-    images: ["neck-fan.webp"], features: ["5 wind-speed modes", "Handheld, tabletop or neck use", "USB rechargeable with display", "Carrying lanyard included"],
-    variants: [{name:"Color",options:["Pink","Mint Green"]}]
-  },
-  "premium-towel-gift-set": {
-    name: "Premium Coral Fleece Towel Gift Set", shortName: "Towel Gift Set", category: "Home & Lifestyle", price: 999,
-    delivery: "Free home delivery across Bangladesh", badge: "3-PIECE SET",
-    summary: "One large bath towel and two face towels in premium gift packaging.",
-    description: "Soft, comfortable and highly absorbent coral fleece towels presented in a premium gift box. Suitable for family use, weddings, birthdays and corporate gifts.",
-    images: ["towel-set.webp"], features: ["1 large bath towel", "2 face towels", "Soft and highly absorbent", "Premium gift box"],
-    variants: [{name:"Color",options:["Pink","Green","Blue","Orange","Grass Green"]}]
-  },
-  "travel-tea-set": {
-    name: "Twilight Ceramic Kung Fu Travel Tea Set", shortName: "Travel Tea Set", category: "Home & Lifestyle", price: 1999,
-    delivery: "Free home delivery across Bangladesh", badge: "COMPLETE SET",
-    summary: "A complete ceramic tea set with four cups, tray, cloth, tongs and premium carrying case.",
-    description: "Enjoy tea at home or while travelling. The elegant ceramic pieces pack safely inside the compact premium case, making the set equally suitable for personal use or gifting.",
-    images: ["tea-set-open.webp","tea-set-steps.webp","tea-set-green.webp"], features: ["1 ceramic teapot + 4 cups", "Tray, cloth and tea tongs", "Protective premium travel case", "Gift-ready presentation"],
-    variants: [{name:"Color",options:["Off-white","Black","Light Green"]}]
+    name: "Twilight Rechargeable Turbo Fan",
+    shortName: "Rechargeable Turbo Fan",
+    category: "Gadgets & Electronics",
+    price: 600,
+    delivery: "Free home delivery across Bangladesh",
+    badge: "FREE DELIVERY",
+    summary: "A compact rechargeable fan with five wind speeds, a digital display and a foldable body.",
+    description: "Stay comfortable at home, at work or while travelling. This compact turbo fan combines strong airflow with an ultra-quiet brushless motor, a clear digital display and a foldable design that works in your hand or on a table.",
+    images: ["turbo-fan.webp"],
+    features: [
+      "5 adjustable wind-speed modes",
+      "3600mAh rechargeable battery",
+      "Digital speed and battery display",
+      "Foldable handheld and tabletop design",
+      "Brushless motor for strong, quiet airflow",
+      "Lightweight and easy to carry"
+    ],
+    specs: [
+      ["Price", "৳600 per piece"],
+      ["Delivery", "Free across Bangladesh"],
+      ["Battery", "3600mAh rechargeable"],
+      ["Speed modes", "5"],
+      ["Display", "Digital"],
+      ["Available colors", "Mint Green and White"]
+    ],
+    variants: [{ name: "Color", options: ["Mint Green", "White"] }]
   },
   "kids-raincoat": {
-    name: "Twilight Kids EVA Raincoat", shortName: "Kids Raincoat", category: "Rain Essentials", price: 300,
-    delivery: "Delivery charge confirmed on WhatsApp", badge: "WATERPROOF",
-    summary: "A soft, lightweight and portable EVA raincoat for children.",
-    description: "Available in regular and small packaging, this comfortable raincoat is easy to fold, carry and reuse for school days and family travel.",
-    images: ["kids-raincoat.webp"], features: ["Soft EVA material", "Lightweight and portable", "Reusable waterproof protection", "Suitable for children"],
-    variants: [{name:"Color",options:["Light Blue","Pink"]},{name:"Pack",options:["Regular Pack","Small Pack"]}]
+    name: "Twilight Kids EVA Raincoat",
+    shortName: "Kids EVA Raincoat",
+    category: "Rain Essentials",
+    price: 400,
+    delivery: "Free home delivery across Bangladesh",
+    badge: "FREE DELIVERY",
+    summary: "A soft, lightweight and reusable EVA raincoat made for school days, travel and sudden rain.",
+    description: "Keep children comfortably covered on rainy days with a soft EVA raincoat that is easy to fold, carry and reuse. The hooded, button-front design gives practical coverage without feeling heavy.",
+    images: ["kids-raincoat-400.webp"],
+    features: [
+      "Soft and comfortable EVA material",
+      "Lightweight, foldable and portable",
+      "Hooded button-front design",
+      "Reusable waterproof protection",
+      "Useful for school and family travel",
+      "Standard and small packaging available"
+    ],
+    specs: [
+      ["Price", "৳400 per piece"],
+      ["Delivery", "Free across Bangladesh"],
+      ["Material", "EVA"],
+      ["Suggested height", "90–145 cm"],
+      ["Suggested weight", "30–70 kg"],
+      ["Packaging", "Standard Pack or Small Pack"]
+    ],
+    variants: [
+      { name: "Color", options: ["Light Blue", "Rose Pink", "Black Tea", "Black", "Yellow", "Blue", "Gray", "White"] },
+      { name: "Pack", options: ["Standard Pack", "Small Pack"] }
+    ]
   },
-  "raincoat-umbrella-set": {
-    name: "Kids Raincoat + Transparent Umbrella Set", shortName: "Raincoat & Umbrella Set", category: "Rain Essentials", price: 500,
-    delivery: "Free home delivery across Bangladesh", badge: "2-PIECE SET",
-    summary: "One kids raincoat and one transparent cherry-blossom umbrella with separate color choices.",
-    description: "A cheerful rain-ready set for children. Choose the raincoat and umbrella colors separately, then send the complete order directly to Twilight Market on WhatsApp.",
-    images: ["umbrella-mint.webp","umbrella-blue.webp","umbrella-purple.webp","umbrella-pink.webp","umbrella-pink-outdoor.webp","umbrella-cherry.webp","kids-raincoat.webp"],
-    features: ["1 kids raincoat + 1 umbrella", "Transparent cherry-blossom design", "Compact matching bottle case", "Nationwide free home delivery"],
-    variants: [{name:"Raincoat Color",options:["Light Blue","Pink"]},{name:"Umbrella Color",options:["Mint Green","Sky Blue","Purple","Pink"]}]
+  "adult-eva-raincoat": {
+    name: "Twilight Adult EVA Raincoat",
+    shortName: "Adult EVA Raincoat",
+    category: "Rain Essentials",
+    price: 450,
+    delivery: "Free home delivery across Bangladesh",
+    badge: "NEW · FREE DELIVERY",
+    summary: "A lightweight hooded adult raincoat with long coverage and a comfortable unisex fit.",
+    description: "A practical reusable raincoat for commuting, shopping and everyday travel. The long hooded design helps protect your clothes from rain while the lightweight EVA material folds easily into a bag when the weather clears.",
+    images: ["adult-raincoat.webp"],
+    features: [
+      "Adult unisex design",
+      "Lightweight EVA rain protection",
+      "Attached hood with drawstring",
+      "Long button-front coverage",
+      "Foldable and easy to carry",
+      "Reusable for regular rainy-day use"
+    ],
+    specs: [
+      ["Price", "৳450 per piece"],
+      ["Delivery", "Free across Bangladesh"],
+      ["Material", "EVA"],
+      ["Fit", "Adult / Unisex"],
+      ["Closure", "Button front"],
+      ["Available colors", "Blue and Transparent White"]
+    ],
+    variants: [{ name: "Color", options: ["Blue", "Transparent White"] }]
+  },
+  "transparent-floral-umbrella": {
+    name: "Twilight Transparent Floral Umbrella",
+    shortName: "Transparent Floral Umbrella",
+    category: "Rain Essentials",
+    price: 650,
+    delivery: "Free home delivery across Bangladesh",
+    badge: "FREE DELIVERY",
+    summary: "A transparent cherry-blossom umbrella with a compact matching bottle-style case.",
+    description: "Bring a cheerful look to rainy days with a transparent floral umbrella that is easy to fold and carry. Each color has a matching edge, handle and compact bottle-style storage case.",
+    images: ["umbrella-mint.webp", "umbrella-blue.webp", "umbrella-purple.webp", "umbrella-pink.webp", "umbrella-pink-outdoor.webp", "umbrella-cherry.webp"],
+    features: [
+      "Transparent cherry-blossom canopy",
+      "Compact foldable design",
+      "Matching bottle-style storage case",
+      "Easy to keep in a bag or at work",
+      "Four attractive color choices",
+      "Suitable for daily rain protection"
+    ],
+    specs: [
+      ["Price", "৳650 per piece"],
+      ["Delivery", "Free across Bangladesh"],
+      ["Design", "Transparent floral"],
+      ["Type", "Compact folding umbrella"],
+      ["Storage", "Matching bottle case"],
+      ["Available colors", "Mint, Sky Blue, Purple and Pink"]
+    ],
+    variants: [{ name: "Color", options: ["Mint Green", "Sky Blue", "Purple", "Pink"] }]
+  },
+  "raincoat-turbo-fan-combo": {
+    name: "Adult Raincoat + Turbo Fan Smart Combo",
+    shortName: "Smart Weather Combo",
+    category: "Combo Offer",
+    price: 999,
+    delivery: "Free home delivery across Bangladesh",
+    badge: "COMBO · FREE DELIVERY",
+    summary: "One adult EVA raincoat plus one rechargeable turbo fan in a practical all-weather value set.",
+    description: "Be ready for both rain and heat with two useful everyday products in one set. Choose the adult raincoat and turbo-fan colors separately before sending your complete order through WhatsApp.",
+    images: ["raincoat-fan-combo.webp", "turbo-fan.webp", "adult-raincoat.webp"],
+    features: [
+      "1 adult EVA raincoat",
+      "1 rechargeable 5-speed turbo fan",
+      "Separate raincoat and fan color choices",
+      "Practical for commuting and travel",
+      "Ready for rainy and hot weather",
+      "Nationwide free home delivery"
+    ],
+    specs: [
+      ["Combo price", "৳999"],
+      ["Delivery", "Free across Bangladesh"],
+      ["Raincoat", "Adult EVA raincoat"],
+      ["Fan", "3600mAh, 5 speed modes"],
+      ["Quantity", "1 raincoat + 1 fan"],
+      ["Ordering", "Select both colors before checkout"]
+    ],
+    variants: [
+      { name: "Raincoat Color", options: ["Blue", "Transparent White"] },
+      { name: "Fan Color", options: ["Mint Green", "White"] }
+    ]
+  },
+  "premium-towel-gift-set": {
+    name: "Premium Coral Fleece Towel Gift Set",
+    shortName: "Towel Gift Set",
+    category: "Home & Lifestyle",
+    price: 999,
+    delivery: "Free home delivery across Bangladesh",
+    badge: "3-PIECE SET",
+    summary: "One large bath towel and two face towels arranged in premium gift packaging.",
+    description: "A soft and highly absorbent three-piece coral fleece towel set presented in a premium gift box. It is suitable for daily family use and makes a thoughtful wedding, birthday or corporate gift.",
+    images: ["towel-set.webp"],
+    features: [
+      "1 large bath towel",
+      "2 matching face towels",
+      "Soft coral fleece fabric",
+      "Fast and effective water absorption",
+      "Premium gift-box presentation",
+      "Suitable for home use and gifting"
+    ],
+    specs: [
+      ["Set price", "৳999"],
+      ["Delivery", "Free across Bangladesh"],
+      ["Set contents", "1 bath towel + 2 face towels"],
+      ["Material", "Coral fleece"],
+      ["Packaging", "Premium gift box"],
+      ["Available colors", "Pink, Green, Blue, Orange and Grass Green"]
+    ],
+    variants: [{ name: "Color", options: ["Pink", "Green", "Blue", "Orange", "Grass Green"] }]
+  },
+  "travel-tea-set": {
+    name: "Twilight Ceramic Kung Fu Travel Tea Set",
+    shortName: "Travel Tea Set",
+    category: "Home & Lifestyle",
+    price: 1999,
+    delivery: "Free home delivery across Bangladesh",
+    badge: "COMPLETE SET",
+    summary: "A complete ceramic tea set with four cups, tray, cloth, tongs and a protective carrying case.",
+    description: "Enjoy a proper tea experience at home, at the office or while travelling. The ceramic teaware and accessories fit securely inside a compact protective case, making the set easy to carry and gift-ready.",
+    images: ["tea-set-open.webp", "tea-set-steps.webp", "tea-set-green.webp"],
+    features: [
+      "1 ceramic teapot and 4 cups",
+      "Bamboo-style serving tray",
+      "Tea cloth and tea tongs included",
+      "Protective fitted travel case",
+      "Compact organized storage",
+      "Suitable for personal use or gifting"
+    ],
+    specs: [
+      ["Set price", "৳1,999"],
+      ["Delivery", "Free across Bangladesh"],
+      ["Teaware", "1 teapot + 4 cups"],
+      ["Accessories", "Tray, cloth and tongs"],
+      ["Case", "Protective carrying case"],
+      ["Available colors", "Off-white, Black and Light Green"]
+    ],
+    variants: [{ name: "Color", options: ["Off-white", "Black", "Light Green"] }]
   }
 };

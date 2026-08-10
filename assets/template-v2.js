@@ -1,10 +1,37 @@
-(function(){
-  var shell=document.getElementById('product-shell');
-  if(!shell)return;
-  shell.outerHTML='<div class="announcement"><span>🚚 Nationwide delivery across Bangladesh</span><span>Quality is our first priority</span><a href="tel:+8801729624403">☎ +880 1729-624403</a></div><header class="site-header"><a class="brand" href="../../"><img src="../../assets/images/twilight-logo.png" alt="Twilight Market"><small>Quality is our first priority</small></a><nav class="site-nav"><a href="../../">Home</a><a href="../../#products">Products</a><a href="../../#about">About Us</a><a href="../../#contact">Contact</a></nav><a class="order-now" href="https://wa.me/8801729624403">Order Now</a></header><main class="product-page"><nav class="breadcrumbs"><a href="../../">Home</a><span>/</span><a href="../../#products">Products</a><span>/</span><strong data-product-short></strong></nav><section class="product-top"><div><div class="gallery-main"><img data-main-image src="" alt=""></div><div class="gallery-thumbs" data-thumbs></div></div><div class="order-panel"><span class="product-badge" data-badge></span><h1 data-product-name></h1><div class="detail-price"><del data-original-price></del><strong data-price></strong></div><p class="summary" data-summary></p><p class="delivery-note">🚚 <span data-delivery></span></p><div class="variant-stack" data-variants></div><div class="quantity-line"><span>Quantity</span><div class="quantity-control"><button data-minus>−</button><strong data-quantity>1</strong><button data-plus>+</button></div><strong data-total></strong></div><div class="customer-fields"><label>Your Name<input name="customer-name" placeholder="Full name"></label><label>Phone Number<input name="customer-phone" inputmode="tel" placeholder="01XXXXXXXXX"></label><label>Delivery Address<textarea name="customer-address" rows="2" placeholder="House, road, area, district"></textarea></label></div><p class="form-error" data-error></p><div class="whatsapp-buttons"><button data-whatsapp><span>◉ WhatsApp 1</span><strong></strong></button><button data-whatsapp><span>◉ WhatsApp 2</span><strong></strong></button></div><small class="send-help">Choose either sales account. WhatsApp opens with the complete order—tap Send to finish.</small></div></section><section class="description-panel"><div><span>DESCRIPTION</span><h2>Product Details</h2><p data-description></p></div><div class="feature-list" data-features></div></section></main><footer class="main-footer"><div class="footer-brand"><img src="../../assets/images/twilight-logo.png" alt="Twilight Market"><p>Quality is our first priority.</p></div><div><strong>WhatsApp Orders</strong><a href="https://wa.me/8801729624403">+880 1729-624403</a><a href="https://wa.me/8801410395694">+880 1410-395694</a></div><div><strong>Twilight Market</strong><span>Mirpur-1, Dhaka</span></div><small>© <span data-year>2026</span> Twilight Market</small></footer>';
-  var mobile=document.createElement('button');mobile.className='menu-toggle';mobile.type='button';mobile.setAttribute('aria-label','Open menu');mobile.setAttribute('aria-expanded','false');mobile.textContent='☰';
-  var header=document.querySelector('.site-header');var nav=header.querySelector('.site-nav');header.insertBefore(mobile,nav);
-  mobile.addEventListener('click',function(){var open=mobile.getAttribute('aria-expanded')==='true';mobile.setAttribute('aria-expanded',String(!open));nav.classList.toggle('open',!open);});
-  var data=document.createElement('script');data.src='../../assets/data.js';data.onload=function(){var product=document.createElement('script');product.src='../../assets/product-v2.js';document.body.appendChild(product);};document.body.appendChild(data);
-  var site=document.createElement('script');site.src='../../assets/site.js';document.body.appendChild(site);
+(function () {
+  var shell = document.getElementById('product-shell');
+  if (!shell) return;
+
+  shell.outerHTML = [
+    '<div class="announcement"><span>🚚 Free delivery on featured products across Bangladesh</span><span>Quality is our first priority</span><a href="tel:+8801729624403">☎ +880 1729-624403</a></div>',
+    '<header class="site-header">',
+      '<a class="brand" href="../../home.html"><img src="../../assets/images/twilight-logo.png" alt="Twilight Market"><small>Quality is our first priority</small></a>',
+      '<button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false">☰</button>',
+      '<nav class="site-nav" aria-label="Main navigation"><a href="../../home.html">Home</a><a class="active" href="../../products.html">Products</a><a href="../../about.html">About Us</a><a href="../../contact.html">Contact</a></nav>',
+      '<a class="order-now" href="../../products.html">Shop Products</a>',
+    '</header>',
+    '<main class="product-page">',
+      '<nav class="breadcrumbs" aria-label="Breadcrumb"><a href="../../products.html">Products</a><span>/</span><strong data-product-short></strong></nav>',
+      '<section class="product-top">',
+        '<div class="product-gallery"><div class="gallery-main"><img data-main-image src="" alt=""><span class="gallery-price" data-gallery-price></span><span class="gallery-delivery">FREE DELIVERY</span></div><div class="gallery-thumbs" data-thumbs></div></div>',
+        '<div class="order-panel"><span class="product-badge" data-badge></span><h1 data-product-name></h1><div class="detail-price"><del data-original-price></del><strong data-price></strong><small>per order</small></div><p class="summary" data-summary></p><p class="delivery-note">🚚 <span data-delivery></span></p><div class="variant-stack" data-variants></div><div class="quantity-line"><span>Quantity</span><div class="quantity-control"><button type="button" data-minus aria-label="Decrease quantity">−</button><strong data-quantity>1</strong><button type="button" data-plus aria-label="Increase quantity">+</button></div><strong data-total></strong></div><div class="customer-fields"><label>Your Name<input name="customer-name" autocomplete="name" placeholder="Full name"></label><label>Phone Number<input name="customer-phone" autocomplete="tel" inputmode="tel" placeholder="01XXXXXXXXX"></label><label>Delivery Address<textarea name="customer-address" autocomplete="street-address" rows="2" placeholder="House, road, area, district"></textarea></label></div><p class="form-error" data-error aria-live="polite"></p><div class="whatsapp-buttons"><button type="button" data-whatsapp><span>◉ Order on WhatsApp 1</span><strong></strong></button><button type="button" data-whatsapp><span>◉ Order on WhatsApp 2</span><strong></strong></button></div><small class="send-help">Choose either sales account. WhatsApp opens with your product, options, quantity and delivery details ready to send.</small></div>',
+      '</section>',
+      '<section class="description-panel"><div class="details-copy"><span>PRODUCT INFORMATION</span><h2>Product Details</h2><p data-description></p><div class="feature-list" data-features></div></div><div class="specification-card"><span>SPECIFICATIONS</span><h2>At a glance</h2><dl data-specs></dl></div></section>',
+      '<section class="order-steps" aria-label="How to order"><div><b>1</b><span><strong>Choose options</strong><small>Select color, package and quantity.</small></span></div><div><b>2</b><span><strong>Add delivery details</strong><small>Enter your name, phone and address.</small></span></div><div><b>3</b><span><strong>Send on WhatsApp</strong><small>Choose either Twilight sales account.</small></span></div></section>',
+    '</main>',
+    '<footer class="main-footer"><div class="footer-brand"><img src="../../assets/images/twilight-logo.png" alt="Twilight Market"><p>Quality is our first priority.</p></div><div><strong>Explore</strong><a href="../../home.html">Home</a><a href="../../products.html">Products</a><a href="../../about.html">About Us</a><a href="../../contact.html">Contact</a></div><div><strong>WhatsApp Orders</strong><a href="https://wa.me/8801729624403">+880 1729-624403</a><a href="https://wa.me/8801410395694">+880 1410-395694</a><span>Mirpur-1, Dhaka</span></div><small>© <span data-year>2026</span> Twilight Market. All rights reserved.</small></footer>'
+  ].join('');
+
+  var data = document.createElement('script');
+  data.src = '../../assets/data.js?v=20260810-2';
+  data.onload = function () {
+    var product = document.createElement('script');
+    product.src = '../../assets/product-v2.js?v=20260810-2';
+    document.body.appendChild(product);
+  };
+  document.body.appendChild(data);
+
+  var site = document.createElement('script');
+  site.src = '../../assets/site.js?v=20260810-2';
+  document.body.appendChild(site);
 }());
