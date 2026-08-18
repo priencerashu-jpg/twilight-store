@@ -5,8 +5,65 @@
 
   var root = '../../assets/images/';
   var selections = {};
-  var quantity = 1;
+  var lineItems = {};
   product.variants.forEach(function (variant) { selections[variant.name] = variant.options[0]; });
+
+  function money(value) {
+    return '৳' + value.toLocaleString('en-US');
+  }
+
+  function copySelections(source) {
+    var copy = {};
+    product.variants.forEach(function (variant) { copy[variant.name] = source[variant.name]; });
+    return copy;
+  }
+
+  function selectionKey(source) {
+    if (!product.variants.length) return 'Standard';
+    return product.variants.map(function (variant) {
+      return variant.name + '=' + source[variant.name];
+    }).join('|');
+  }
+
+  function selectionLabel(source) {
+    if (!product.variants.length) return 'Standard';
+    return product.variants.map(function (variant) {
+      return variant.name + ': ' + source[variant.name];
+    }).join(' · ');
+  }
+
+  function activeKeys() {
+    return Object.keys(lineItems).filter(function (key) {
+      return lineItems[key].quantity > 0;
+    });
+  }
+
+  function calculateTotals() {
+    var totalQuantity = activeKeys().reduce(function (sum, key) {
+      return sum + lineItems[key].quantity;
+    }, 0);
+    var productTotal = product.price * totalQuantity;
+    var totalWeight = product.weightGrams * totalQuantity;
+    var chargedKg = totalQuantity ? Math.max(1, Math.ceil(totalWeight / 1000)) : 0;
+    var area = document.querySelector('[name="shipping-area"]:checked');
+    var insideDhaka = !area || area.value === 'inside';
+    var shippingCost = totalQuantity ? (insideDhaka ? 80 : 110) + Math.max(0, chargedKg - 1) * 25 : 0;
+    return {
+      totalQuantity: totalQuantity,
+      productTotal: productTotal,
+      totalWeight: totalWeight,
+      chargedKg: chargedKg,
+      insideDhaka: insideDhaka,
+      shippingCost: shippingCost,
+      payable: productTotal + shippingCost
+    };
+  }
+
+  function formatWeight(grams) {
+    if (grams < 1000) return grams + ' g';
+    return (grams / 1000).toFixed(2).replace(/\.?0+$/, '') + ' kg';
+  }
+
   document.title = product.name + ' | Twilight Market';
   document.querySelector('[data-product-name]').textContent = product.name;
   document.querySelector('[data-product-short]').textContent = product.shortName;
@@ -14,22 +71,27 @@
   document.querySelector('[data-summary]').textContent = product.summary;
   document.querySelector('[data-delivery]').textContent = product.delivery;
   document.querySelector('[data-description]').textContent = product.description;
-  document.querySelector('[data-price]').textContent = '৳' + product.price.toLocaleString('en-US');
-  document.querySelector('[data-gallery-price]').textContent = '৳' + product.price.toLocaleString('en-US');
+  document.querySelector('[data-price]').textContent = money(product.price);
+  document.querySelector('[data-gallery-price]').textContent = money(product.price);
   if (product.originalPrice) {
-    document.querySelector('[data-original-price]').textContent = '৳' + product.originalPrice.toLocaleString('en-US');
+    document.querySelector('[data-original-price]').textContent = money(product.originalPrice);
   } else {
     document.querySelector('[data-original-price]').remove();
   }
 
   var mainImage = document.querySelector('[data-main-image]');
-  mainImage.src = root + product.images[0]; mainImage.alt = product.name;
+  mainImage.src = root + product.images[0];
+  mainImage.alt = product.name;
   var thumbs = document.querySelector('[data-thumbs]');
   product.images.forEach(function (file, index) {
     var button = document.createElement('button');
-    button.type = 'button'; button.className = index === 0 ? 'active' : '';
+    button.type = 'button';
+    button.className = index === 0 ? 'active' : '';
     button.setAttribute('aria-label', 'Show product image ' + (index + 1));
-    button.innerHTML = '<img src="' + root + file + '" alt="">';
+    var image = document.createElement('img');
+    image.src = root + file;
+    image.alt = '';
+    button.appendChild(image);
     button.addEventListener('click', function () {
       mainImage.src = root + file;
       thumbs.querySelectorAll('button').forEach(function (item) { item.classList.remove('active'); });
@@ -40,36 +102,136 @@
   if (product.images.length < 2) thumbs.hidden = true;
 
   var variants = document.querySelector('[data-variants]');
+  var variantControls = {};
   product.variants.forEach(function (variant) {
     var field = document.createElement('fieldset');
     var legend = document.createElement('legend');
-    legend.innerHTML = variant.name + ': <strong>' + selections[variant.name] + '</strong>';
-    var row = document.createElement('div'); row.className = 'option-row';
+    var label = document.createElement('span');
+    label.textContent = variant.name + ': ';
+    var chosen = document.createElement('strong');
+    chosen.textContent = selections[variant.name];
+    legend.appendChild(label);
+    legend.appendChild(chosen);
+    var row = document.createElement('div');
+    row.className = 'option-row';
     variant.options.forEach(function (option, index) {
-      var button = document.createElement('button'); button.type = 'button'; button.textContent = option;
+      var button = document.createElement('button');
+      button.type = 'button';
+      button.textContent = option;
+      button.setAttribute('aria-pressed', index === 0 ? 'true' : 'false');
       if (index === 0) button.className = 'selected';
       button.addEventListener('click', function () {
-        selections[variant.name] = option; legend.querySelector('strong').textContent = option;
-        row.querySelectorAll('button').forEach(function (item) { item.classList.remove('selected'); });
+        selections[variant.name] = option;
+        chosen.textContent = option;
+        row.querySelectorAll('button').forEach(function (item) {
+          item.classList.remove('selected');
+          item.setAttribute('aria-pressed', 'false');
+        });
         button.classList.add('selected');
+        button.setAttribute('aria-pressed', 'true');
+        updateCurrentSelection();
       });
       row.appendChild(button);
     });
-    field.appendChild(legend); field.appendChild(row); variants.appendChild(field);
+    variantControls[variant.name] = { field: field, chosen: chosen, row: row };
+    field.appendChild(legend);
+    field.appendChild(row);
+    variants.appendChild(field);
   });
 
-  var qty = document.querySelector('[data-quantity]');
-  var total = document.querySelector('[data-total]');
-  function updateTotal() { qty.textContent = quantity; total.textContent = 'Total: ৳' + (product.price * quantity).toLocaleString('en-US'); }
-  document.querySelector('[data-minus]').addEventListener('click', function () { quantity = Math.max(1, quantity - 1); updateTotal(); });
-  document.querySelector('[data-plus]').addEventListener('click', function () { quantity = Math.min(10, quantity + 1); updateTotal(); });
-  updateTotal();
+  var initialKey = selectionKey(selections);
+  lineItems[initialKey] = { choices: copySelections(selections), quantity: 1 };
 
-  document.querySelector('[data-features]').innerHTML = product.features.map(function (item) { return '<p><span>✓</span>' + item + '</p>'; }).join('');
+  var qty = document.querySelector('[data-quantity]');
+  var currentChoice = document.querySelector('[data-current-choice]');
+  var selectedItems = document.querySelector('[data-selected-items]');
+  var productTotalNode = document.querySelector('[data-total]');
+  var shippingNode = document.querySelector('[data-shipping-cost]');
+  var payableNode = document.querySelector('[data-payable]');
+  var weightNode = document.querySelector('[data-weight]');
+
+  function updateCurrentSelection() {
+    var key = selectionKey(selections);
+    qty.textContent = lineItems[key] ? lineItems[key].quantity : 0;
+    currentChoice.textContent = selectionLabel(selections);
+  }
+
+  function renderSummary() {
+    var keys = activeKeys();
+    selectedItems.innerHTML = '';
+    if (!keys.length) {
+      var empty = document.createElement('p');
+      empty.className = 'empty-selection';
+      empty.textContent = 'Choose an option above and use + to add it to your order.';
+      selectedItems.appendChild(empty);
+    }
+
+    keys.forEach(function (key) {
+      var item = lineItems[key];
+      var row = document.createElement('div');
+      row.className = 'selection-item';
+      var details = document.createElement('div');
+      var title = document.createElement('strong');
+      title.textContent = selectionLabel(item.choices);
+      var price = document.createElement('small');
+      price.textContent = item.quantity + ' × ' + money(product.price) + ' = ' + money(item.quantity * product.price);
+      details.appendChild(title);
+      details.appendChild(price);
+      var remove = document.createElement('button');
+      remove.type = 'button';
+      remove.textContent = 'Remove';
+      remove.setAttribute('aria-label', 'Remove ' + selectionLabel(item.choices));
+      remove.addEventListener('click', function () {
+        delete lineItems[key];
+        updateCurrentSelection();
+        renderSummary();
+      });
+      row.appendChild(details);
+      row.appendChild(remove);
+      selectedItems.appendChild(row);
+    });
+
+    var totals = calculateTotals();
+    productTotalNode.textContent = 'Product subtotal: ' + money(totals.productTotal);
+    shippingNode.textContent = 'Shipping cost: ' + money(totals.shippingCost);
+    payableNode.textContent = 'Total payable: ' + money(totals.payable);
+    weightNode.textContent = totals.totalQuantity
+      ? 'Order weight: ' + formatWeight(totals.totalWeight) + ' · shipping tier: ' + totals.chargedKg + ' kg'
+      : 'Order weight: 0 g';
+  }
+
+  function changeCurrentQuantity(amount) {
+    var key = selectionKey(selections);
+    var current = lineItems[key] ? lineItems[key].quantity : 0;
+    var next = Math.max(0, Math.min(10, current + amount));
+    if (!next) {
+      delete lineItems[key];
+    } else {
+      lineItems[key] = { choices: copySelections(selections), quantity: next };
+    }
+    updateCurrentSelection();
+    renderSummary();
+  }
+
+  document.querySelector('[data-minus]').addEventListener('click', function () { changeCurrentQuantity(-1); });
+  document.querySelector('[data-plus]').addEventListener('click', function () { changeCurrentQuantity(1); });
+  document.querySelectorAll('[name="shipping-area"]').forEach(function (input) {
+    input.addEventListener('change', renderSummary);
+  });
+  updateCurrentSelection();
+  renderSummary();
+
+  document.querySelector('[data-features]').innerHTML = product.features.map(function (item) {
+    return '<p><span>✓</span>' + item + '</p>';
+  }).join('');
   document.querySelector('[data-specs]').innerHTML = product.specs.map(function (item) {
     return '<div><dt>' + item[0] + '</dt><dd>' + item[1] + '</dd></div>';
   }).join('');
-  var accounts = [{number:'8801729624403',display:'+880 1729-624403'},{number:'8801410395694',display:'+880 1410-395694'}];
+
+  var accounts = [
+    { number: '8801729624403', display: '+880 1729-624403' },
+    { number: '8801410395694', display: '+880 1410-395694' }
+  ];
   document.querySelectorAll('[data-whatsapp]').forEach(function (button, index) {
     button.querySelector('strong').textContent = accounts[index].display;
     button.addEventListener('click', function () {
@@ -77,10 +239,40 @@
       var phone = document.querySelector('[name="customer-phone"]').value.trim();
       var address = document.querySelector('[name="customer-address"]').value.trim();
       var error = document.querySelector('[data-error]');
-      if (!name || !phone || !address) { error.textContent = 'Enter your name, phone number and delivery address first.'; return; }
+      var keys = activeKeys();
+      if (!keys.length) {
+        error.textContent = 'Add at least one product option and quantity first.';
+        return;
+      }
+      if (!name || !phone || !address) {
+        error.textContent = 'Enter your name, phone number and delivery address first.';
+        return;
+      }
       error.textContent = '';
-      var choices = product.variants.map(function (variant) { return variant.name + ': ' + selections[variant.name]; }).join('\n');
-      var message = ['Hello Twilight Market, I want to place an order.','', 'Product: ' + product.name, choices, 'Quantity: ' + quantity, 'Unit price: ৳' + product.price.toLocaleString('en-US'), 'Product total: ৳' + (product.price * quantity).toLocaleString('en-US'), 'Delivery: ' + product.delivery, '', 'Customer name: ' + name, 'Phone: ' + phone, 'Delivery address: ' + address, '', 'Please confirm availability and final payable amount.'].join('\n');
+      var totals = calculateTotals();
+      var itemLines = keys.map(function (key, itemIndex) {
+        var item = lineItems[key];
+        return (itemIndex + 1) + '. ' + selectionLabel(item.choices) + ' — ' + item.quantity + ' × ' + money(product.price) + ' = ' + money(item.quantity * product.price);
+      });
+      var areaLabel = totals.insideDhaka ? 'Inside Dhaka city' : 'Outside Dhaka city';
+      var message = [
+        'Hello Twilight Market, I want to place an order.',
+        '',
+        'Product: ' + product.name,
+        'Selected items:',
+        itemLines.join('\n'),
+        'Product subtotal: ' + money(totals.productTotal),
+        'Shipping area: ' + areaLabel,
+        'Order weight: ' + formatWeight(totals.totalWeight) + ' (shipping tier ' + totals.chargedKg + ' kg)',
+        'Shipping cost: ' + money(totals.shippingCost),
+        'Total payable: ' + money(totals.payable),
+        '',
+        'Customer name: ' + name,
+        'Phone: ' + phone,
+        'Delivery address: ' + address,
+        '',
+        'Please confirm availability and the order.'
+      ].join('\n');
       window.open('https://wa.me/' + accounts[index].number + '?text=' + encodeURIComponent(message), '_blank', 'noopener,noreferrer');
     });
   });
