@@ -1,41 +1,62 @@
 <!doctype html>
 <html lang="en">
 <head>
-<!-- TikTok Pixel Code Start -->
-<script>
-!function (w, d, t) {
-  w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script");n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
-  ttq.load('DA016D3C77UE58FDCOHG');
-  ttq.page();
-}(window, document, 'ttq');
-</script>
-<!-- TikTok Pixel Code End -->
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#123c2e">
-<meta name="description" content="Review your Twilight Market cart, select products, calculate delivery and order without creating an account.">
-<title>Your Cart | Twilight Market</title>
-<link rel="icon" href="assets/images/twilight-logo.png">
-<link rel="stylesheet" href="assets/style.css?v=20260818-7">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="description" content="Review selected Twilight Market products, calculate delivery and send your order without creating an account.">
+  <meta name="theme-color" content="#123b2d">
+  <title>Your Cart | Twilight Market</title>
+  <link rel="icon" type="image/svg+xml" href="assets/twilight-mark.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css?v=20260818-6">
+  <link rel="stylesheet" href="assets/premium.css?v=20260818-6">
 </head>
-<body>
-<header class="site-header premium-header">
+<body class="premium-cart">
+  <header class="site-header premium-header">
     <a class="brand" href="home.html" aria-label="Twilight Market home"><img src="assets/images/twilight-logo.png" alt="Twilight Market"></a>
     <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false">☰</button>
-    <nav class="site-nav" aria-label="Main navigation"><a href="home.html">Home</a><a href="products.html">Shop</a><a href="about.html">About Us</a><a href="contact.html">Contact</a></nav>
-    <div class="header-actions"><button class="search-toggle" type="button" data-search-toggle aria-label="Search products"><span aria-hidden="true">⌕</span><b>Search</b></button><a class="cart-link active" href="cart.html" aria-label="Open cart"><span class="cart-label">Cart</span><span data-cart-count>0</span></a><a class="order-now" href="https://wa.me/8801729624403?text=Hello%20Twilight%20Market" target="_blank" rel="noopener">WhatsApp</a></div>
+    <nav class="site-nav" aria-label="Main navigation">
+      <a href="home.html">Home</a>
+      <a href="products.html">Shop</a>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact</a>
+      <a href="products.html#product-search">Search</a>
+      <a class="active cart-link" href="cart.html">Cart <span data-cart-count>0</span></a>
+      <a class="nav-whatsapp" href="https://wa.me/8801729624403" target="_blank" rel="noopener">WhatsApp</a>
+    </nav>
+    <a class="order-now premium-whatsapp" href="https://wa.me/8801729624403" target="_blank" rel="noopener">WhatsApp</a>
   </header>
-<main class="cart-page premium-cart-page"><section class="cart-heading"><span>YOUR TWILIGHT CART</span><h1>Review your selected pieces.</h1><p>Your cart is saved privately in this browser. No account or customer ID is required.</p></section><div class="cart-layout"><section class="cart-items-panel" aria-labelledby="cart-items-title"><div class="cart-panel-heading"><div><span>YOUR SELECTION</span><h2 id="cart-items-title">Choose what to order</h2></div><button type="button" data-clear-cart>Clear cart</button></div><div data-cart-items></div></section><aside class="cart-checkout" aria-labelledby="cart-summary-title"><span>ORDER SUMMARY</span><h2 id="cart-summary-title">Your total</h2><small data-selected-count>0 selected items</small><div class="cart-total-lines"><strong data-cart-subtotal>Product subtotal: ৳0</strong><strong data-cart-shipping>Shipping cost: ৳0</strong><strong data-cart-payable>Total payable: ৳0</strong></div><fieldset class="shipping-area cart-shipping"><legend>Delivery area</legend><label><input type="radio" name="cart-shipping-area" value="inside" checked> Inside Dhaka city</label><label><input type="radio" name="cart-shipping-area" value="outside"> Outside Dhaka city</label></fieldset><div class="customer-fields cart-customer-fields"><label>Your Name<input name="cart-customer-name" autocomplete="name" placeholder="Full name"></label><label>Phone Number<input name="cart-customer-phone" autocomplete="tel" inputmode="tel" placeholder="01XXXXXXXXX"></label><label>Delivery Address<textarea name="cart-customer-address" autocomplete="street-address" rows="3" placeholder="House, road, area, district"></textarea></label></div><p class="form-error" data-cart-error aria-live="polite"></p><div class="whatsapp-buttons cart-whatsapp"><button type="button" data-cart-whatsapp><span>Order on WhatsApp 1</span><strong></strong></button><button type="button" data-cart-whatsapp><span>Order on WhatsApp 2</span><strong></strong></button></div><small class="cart-privacy">Your cart stays in this browser. We receive the selected order only after you choose a WhatsApp button.</small></aside></div></main>
-<footer class="main-footer premium-footer">
-    <div class="footer-brand"><img src="assets/images/twilight-logo.png" alt="Twilight Market"><p>Thoughtfully selected lifestyle, rain, home and gift products with clear ordering and personal support across Bangladesh.</p></div>
-    <div><strong>Shop</strong><a href="products.html?q=rain">Rain Essentials</a><a href="products.html?q=gadgets">Gadgets &amp; Electronics</a><a href="products.html?q=home">Home &amp; Lifestyle</a><a href="products.html?q=set">Gifts &amp; Sets</a></div>
-    <div><strong>Customer Care</strong><a href="shipping.html">Shipping Information</a><a href="returns.html">Returns &amp; Replacement</a><a href="cancellation.html">Order Cancellation</a><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms &amp; Conditions</a></div>
-    <div><strong>Talk to Twilight</strong><a href="https://wa.me/8801729624403" target="_blank" rel="noopener">+880 1729-624403</a><a href="https://wa.me/8801410395694" target="_blank" rel="noopener">+880 1410-395694</a><a class="footer-social-link" href="https://www.facebook.com/OnlineMarketTwilight/" target="_blank" rel="noopener" aria-label="Visit Twilight Market on Facebook">Facebook Page ↗</a><span>Ahmed Nagar, Paikpara<br>Mirpur-1, Dhaka, Bangladesh</span></div>
-    <div class="footer-bottom"><small>© <span data-year>2026</span> Twilight Market. All rights reserved.</small><span>Clear choices · Personal support · Nationwide delivery</span></div>
+  <main class="cart-page">
+    <section class="cart-heading"><span>YOUR CART</span><h1>Review your order</h1><p>Your cart is saved privately on this device. No account or customer ID is required.</p></section>
+    <div class="cart-layout">
+      <section class="cart-items-panel" aria-labelledby="cart-items-title">
+        <div class="cart-panel-heading"><div><span>PRODUCTS</span><h2 id="cart-items-title">Choose what to order</h2></div><button type="button" data-clear-cart>Clear cart</button></div>
+        <div data-cart-items></div>
+      </section>
+      <aside class="cart-checkout" aria-labelledby="cart-summary-title">
+        <span>CHECKOUT</span><h2 id="cart-summary-title">Order summary</h2>
+        <small data-selected-count>0 selected items</small>
+        <div class="cart-total-lines"><strong data-cart-subtotal>Product subtotal: ৳0</strong><strong data-cart-shipping>Shipping cost: ৳0</strong><strong data-cart-payable>Total payable: ৳0</strong></div>
+        <fieldset class="shipping-area cart-shipping"><legend>Delivery area</legend><label><input type="radio" name="cart-shipping-area" value="inside" checked> Inside Dhaka city</label><label><input type="radio" name="cart-shipping-area" value="outside"> Outside Dhaka city</label></fieldset>
+        <div class="customer-fields cart-customer-fields"><label>Your Name<input name="cart-customer-name" autocomplete="name" placeholder="Full name"></label><label>Phone Number<input name="cart-customer-phone" autocomplete="tel" inputmode="tel" placeholder="01XXXXXXXXX"></label><label>Delivery Address<textarea name="cart-customer-address" autocomplete="street-address" rows="3" placeholder="House, road, area, district"></textarea></label></div>
+        <p class="form-error" data-cart-error aria-live="polite"></p>
+        <div class="whatsapp-buttons cart-whatsapp"><button type="button" data-cart-whatsapp><span>◉ Order on WhatsApp 1</span><strong></strong></button><button type="button" data-cart-whatsapp><span>◉ Order on WhatsApp 2</span><strong></strong></button></div>
+        <small class="cart-privacy">Your cart stays in this browser. We only receive the selected order after you choose a WhatsApp button.</small>
+      </aside>
+    </div>
+  </main>
+  <footer class="main-footer premium-footer">
+    <div class="footer-brand"><img src="assets/images/twilight-logo.png" alt="Twilight Market"><p>Thoughtful everyday products, clearly presented and personally supported from Bangladesh.</p></div>
+    <div><strong>Shop</strong><a href="products.html?category=Rain%20Essentials">Rain Essentials</a><a href="products.html?category=Gadgets%20%26%20Electronics">Gadgets &amp; Electronics</a><a href="products.html?category=Home%20%26%20Lifestyle">Home &amp; Lifestyle</a><a href="products.html?category=Gifts%20%26%20Sets">Gifts &amp; Sets</a></div>
+    <div><strong>Customer Care</strong><a href="shipping.html">Shipping</a><a href="returns.html">Returns &amp; Replacement</a><a href="cancellation.html">Order Cancellation</a><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms</a><button type="button" class="footer-link-button" data-cookie-settings>Cookie preferences</button></div>
+    <div><strong>Talk to Us</strong><a href="https://wa.me/8801729624403" target="_blank" rel="noopener">+880 1729-624403</a><a href="https://wa.me/8801410395694" target="_blank" rel="noopener">+880 1410-395694</a><a class="footer-social-link" href="https://www.facebook.com/OnlineMarketTwilight/" target="_blank" rel="noopener">Facebook Page ↗</a><span>Ahmed Nagar, Paikpara<br>Mirpur-1, Dhaka</span><small>Open 24/7</small></div>
+    <small class="footer-copyright">© <span data-year>2026</span> Twilight Market. All rights reserved.</small>
   </footer>
-<script src="assets/cart.js?v=20260818-6"></script>
-<script src="assets/site.js?v=20260818-6"></script>
-<script src="assets/data.js?v=20260818-6"></script>
-<script src="assets/cart-page.js?v=20260818-6"></script>
+  <script src="assets/cart.js?v=20260818-6"></script>
+  <script src="assets/site.js?v=20260818-6"></script>
+  <script src="assets/data.js?v=20260818-6"></script>
+  <script src="assets/cart-page.js?v=20260818-6"></script>
 </body>
 </html>
