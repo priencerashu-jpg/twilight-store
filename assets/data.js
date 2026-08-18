@@ -5,7 +5,7 @@ window.TWILIGHT_PRODUCTS = {
     "category": "Gadgets & Electronics",
     "price": 500,
     "delivery": "Shipping from ৳80 inside Dhaka or ৳110 outside Dhaka; add ৳25 for each additional kg.",
-    "badge": "৳100 OFF",
+    "badge": "Curated Essential",
     "summary": "A compact rechargeable fan with five wind speeds, a digital display and a foldable body.",
     "description": "Stay comfortable at home, at work or while travelling. This compact turbo fan combines strong airflow with an ultra-quiet brushless motor, a clear digital display and a foldable design that works in your hand or on a table.",
     "images": [
@@ -63,7 +63,7 @@ window.TWILIGHT_PRODUCTS = {
     "category": "Rain Essentials",
     "price": 300,
     "delivery": "Shipping from ৳80 inside Dhaka or ৳110 outside Dhaka; add ৳25 for each additional kg.",
-    "badge": "৳100 OFF",
+    "badge": "Curated Essential",
     "summary": "A soft, lightweight and reusable EVA raincoat made for school days, travel and sudden rain.",
     "description": "Keep children comfortably covered on rainy days with a soft EVA raincoat that is easy to fold, carry and reuse. The hooded, button-front design gives practical coverage without feeling heavy.",
     "images": [
@@ -134,7 +134,7 @@ window.TWILIGHT_PRODUCTS = {
     "category": "Rain Essentials",
     "price": 350,
     "delivery": "Shipping from ৳80 inside Dhaka or ৳110 outside Dhaka; add ৳25 for each additional kg.",
-    "badge": "NEW · ৳100 OFF",
+    "badge": "Everyday Essential",
     "summary": "A lightweight hooded adult raincoat with long coverage and a comfortable unisex fit.",
     "description": "A practical reusable raincoat for commuting, shopping and everyday travel. The long hooded design helps protect your clothes from rain while the lightweight EVA material folds easily into a bag when the weather clears.",
     "images": [
@@ -192,7 +192,7 @@ window.TWILIGHT_PRODUCTS = {
     "category": "Rain Essentials",
     "price": 550,
     "delivery": "Shipping from ৳80 inside Dhaka or ৳110 outside Dhaka; add ৳25 for each additional kg.",
-    "badge": "৳100 OFF",
+    "badge": "Curated Essential",
     "summary": "A transparent cherry-blossom umbrella with a compact matching bottle-style case.",
     "description": "Bring a cheerful look to rainy days with a transparent floral umbrella that is easy to fold and carry. Each color has a matching edge, handle and compact bottle-style storage case.",
     "images": [
@@ -257,7 +257,7 @@ window.TWILIGHT_PRODUCTS = {
     "category": "Combo Offer",
     "price": 899,
     "delivery": "Shipping from ৳80 inside Dhaka or ৳110 outside Dhaka; add ৳25 for each additional kg.",
-    "badge": "COMBO · ৳100 OFF",
+    "badge": "Curated Set",
     "summary": "One adult EVA raincoat plus one rechargeable turbo fan in a practical all-weather value set.",
     "description": "Be ready for both rain and heat with two useful everyday products in one set. Choose the adult raincoat and turbo-fan colors separately before sending your complete order through WhatsApp.",
     "images": [
@@ -271,7 +271,7 @@ window.TWILIGHT_PRODUCTS = {
       "Separate raincoat and fan color choices",
       "Practical for commuting and travel",
       "Ready for rainy and hot weather",
-      "Clear weight-based shipping rates"
+      "Clear delivery pricing before ordering"
     ],
     "specs": [
       [
@@ -324,7 +324,7 @@ window.TWILIGHT_PRODUCTS = {
     "category": "Home & Lifestyle",
     "price": 899,
     "delivery": "Shipping from ৳80 inside Dhaka or ৳110 outside Dhaka; add ৳25 for each additional kg.",
-    "badge": "৳100 OFF",
+    "badge": "Curated Essential",
     "summary": "One large bath towel and two face towels arranged in premium gift packaging.",
     "description": "A soft and highly absorbent three-piece coral fleece towel set presented in a premium gift box. It is suitable for daily family use and makes a thoughtful wedding, birthday or corporate gift.",
     "images": [
@@ -385,7 +385,7 @@ window.TWILIGHT_PRODUCTS = {
     "category": "Home & Lifestyle",
     "price": 1899,
     "delivery": "Shipping from ৳80 inside Dhaka or ৳110 outside Dhaka; add ৳25 for each additional kg.",
-    "badge": "৳100 OFF",
+    "badge": "Curated Essential",
     "summary": "A complete ceramic tea set with four cups, tray, cloth, tongs and a protective carrying case.",
     "description": "Enjoy a proper tea experience at home, at the office or while travelling. The ceramic teaware and accessories fit securely inside a compact protective case, making the set easy to carry and gift-ready.",
     "images": [

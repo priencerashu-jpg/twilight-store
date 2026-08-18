@@ -3,11 +3,11 @@
   if (!shell) return;
 
   shell.outerHTML = [
-    '<header class="site-header">',
-      '<a class="brand" href="../../home.html"><img src="../../assets/images/twilight-logo.png" alt="Twilight Market"><small>Quality is our first priority</small></a>',
+    '<header class="site-header premium-header">',
+      '<a class="brand" href="../../home.html" aria-label="Twilight Market home"><img src="../../assets/images/twilight-logo.png" alt="Twilight Market"></a>',
       '<button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false">☰</button>',
-      '<nav class="site-nav" aria-label="Main navigation"><a href="../../home.html">Home</a><a class="active" href="../../products.html">Products</a><a href="../../about.html">About Us</a><a href="../../contact.html">Contact</a><a class="cart-link" href="../../cart.html">Cart <span data-cart-count>0</span></a></nav>',
-      '<a class="order-now" href="../../products.html">Shop Products</a>',
+      '<nav class="site-nav" aria-label="Main navigation"><a href="../../home.html">Home</a><a class="active" href="../../products.html">Shop</a><a href="../../about.html">About Us</a><a href="../../contact.html">Contact</a></nav>',
+      '<div class="header-actions"><button class="search-toggle" type="button" data-search-toggle aria-label="Search products"><span aria-hidden="true">⌕</span><b>Search</b></button><a class="cart-link" href="../../cart.html" aria-label="Open cart"><span class="cart-label">Cart</span><span data-cart-count>0</span></a><a class="order-now" href="https://wa.me/8801729624403?text=Hello%20Twilight%20Market" target="_blank" rel="noopener">WhatsApp</a></div>',
     '</header>',
     '<main class="product-page">',
       '<nav class="breadcrumbs" aria-label="Breadcrumb"><a href="../../products.html">Products</a><span>/</span><strong data-product-short></strong></nav>',
@@ -18,17 +18,17 @@
       '<section class="description-panel"><div class="details-copy"><span>PRODUCT INFORMATION</span><h2>Product Details</h2><p data-description></p><div class="feature-list" data-features></div></div><div class="specification-card"><span>SPECIFICATIONS</span><h2>At a glance</h2><dl data-specs></dl></div></section>',
       '<section class="order-steps" aria-label="How to order"><div><b>1</b><span><strong>Choose options</strong><small>Select colors and quantities.</small></span></div><div><b>2</b><span><strong>Add to cart</strong><small>Your cart stays on this device without an account.</small></span></div><div><b>3</b><span><strong>Review and order</strong><small>Select cart items, check the total and send on WhatsApp.</small></span></div></section>',
     '</main>',
-    '<footer class="main-footer"><div class="footer-brand"><img src="../../assets/images/twilight-logo.png" alt="Twilight Market"><p>Quality is our first priority.</p></div><div><strong>Explore</strong><a href="../../home.html">Home</a><a href="../../products.html">Products</a><a href="../../about.html">About Us</a><a href="../../contact.html">Contact</a><a href="../../cart.html">Cart</a></div><div><strong>WhatsApp Orders</strong><a href="https://wa.me/8801729624403">+880 1729-624403</a><a href="https://wa.me/8801410395694">+880 1410-395694</a><span>Mirpur-1, Dhaka</span></div><small>© <span data-year>2026</span> Twilight Market. All rights reserved.</small><span class="product-visit-counter" data-product-visitor aria-live="polite"></span></footer>'
+    '<footer class="main-footer premium-footer"><div class="footer-brand"><img src="../../assets/images/twilight-logo.png" alt="Twilight Market"><p>Thoughtfully selected lifestyle, rain, home and gift products with clear ordering and personal support across Bangladesh.</p></div><div><strong>Shop</strong><a href="../../products.html?q=rain">Rain Essentials</a><a href="../../products.html?q=gadgets">Gadgets &amp; Electronics</a><a href="../../products.html?q=home">Home &amp; Lifestyle</a><a href="../../products.html?q=set">Gifts &amp; Sets</a></div><div><strong>Customer Care</strong><a href="../../shipping.html">Shipping Information</a><a href="../../returns.html">Returns &amp; Replacement</a><a href="../../cancellation.html">Order Cancellation</a><a href="../../privacy.html">Privacy Policy</a><a href="../../terms.html">Terms &amp; Conditions</a></div><div><strong>Talk to Twilight</strong><a href="https://wa.me/8801729624403" target="_blank" rel="noopener">+880 1729-624403</a><a href="https://wa.me/8801410395694" target="_blank" rel="noopener">+880 1410-395694</a><span>Ahmed Nagar, Paikpara<br>Mirpur-1, Dhaka, Bangladesh</span></div><div class="footer-bottom"><small>© <span data-year>2026</span> Twilight Market. All rights reserved.</small><span>Clear choices · Personal support · Nationwide delivery</span></div><span class="product-visit-counter" data-product-visitor aria-live="polite"></span></footer>'
   ].join('');
 
   var data = document.createElement('script');
-  data.src = '../../assets/data.js?v=20260818-5';
+  data.src = '../../assets/data.js?v=20260818-6';
   data.onload = function () {
     var cart = document.createElement('script');
-    cart.src = '../../assets/cart.js?v=20260818-5';
+    cart.src = '../../assets/cart.js?v=20260818-6';
     cart.onload = function () {
       var product = document.createElement('script');
-      product.src = '../../assets/product-v2.js?v=20260818-5';
+      product.src = '../../assets/product-v2.js?v=20260818-6';
       document.body.appendChild(product);
     };
     document.body.appendChild(cart);
@@ -36,6 +36,6 @@
   document.body.appendChild(data);
 
   var site = document.createElement('script');
-  site.src = '../../assets/site.js?v=20260818-5';
+  site.src = '../../assets/site.js?v=20260818-6';
   document.body.appendChild(site);
 }());
