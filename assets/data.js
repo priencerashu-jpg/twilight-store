@@ -43,10 +43,6 @@ window.TWILIGHT_PRODUCTS = {
       [
         "Available colors",
         "Mint Green and White"
-      ],
-      [
-        "Shipping weight",
-        "330 g per fan"
       ]
     ],
     "variants": [
@@ -105,10 +101,6 @@ window.TWILIGHT_PRODUCTS = {
       [
         "Packaging",
         "Standard Pack or Small Pack"
-      ],
-      [
-        "Shipping weight",
-        "300 g per raincoat"
       ]
     ],
     "variants": [
@@ -180,10 +172,6 @@ window.TWILIGHT_PRODUCTS = {
       [
         "Available colors",
         "Blue and Transparent White"
-      ],
-      [
-        "Shipping weight",
-        "300 g per raincoat"
       ]
     ],
     "variants": [
@@ -247,10 +235,6 @@ window.TWILIGHT_PRODUCTS = {
       [
         "Available colors",
         "Mint, Sky Blue, Purple and Pink"
-      ],
-      [
-        "Shipping weight",
-        "300 g shipping weight"
       ]
     ],
     "variants": [
@@ -313,10 +297,6 @@ window.TWILIGHT_PRODUCTS = {
       [
         "Ordering",
         "Select both colors before checkout"
-      ],
-      [
-        "Shipping weight",
-        "630 g per combo"
       ]
     ],
     "variants": [
@@ -382,10 +362,6 @@ window.TWILIGHT_PRODUCTS = {
       [
         "Available colors",
         "Pink, Green, Blue, Orange and Grass Green"
-      ],
-      [
-        "Shipping weight",
-        "990 g per set"
       ]
     ],
     "variants": [
@@ -449,10 +425,6 @@ window.TWILIGHT_PRODUCTS = {
       [
         "Available colors",
         "Off-white, Black and Light Green"
-      ],
-      [
-        "Shipping weight",
-        "990 g per set"
       ]
     ],
     "variants": [

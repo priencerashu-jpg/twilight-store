@@ -59,10 +59,6 @@
     };
   }
 
-  function formatWeight(grams) {
-    if (grams < 1000) return grams + ' g';
-    return (grams / 1000).toFixed(2).replace(/\.?0+$/, '') + ' kg';
-  }
 
   document.title = product.name + ' | Twilight Market';
   document.querySelector('[data-product-name]').textContent = product.name;
@@ -148,7 +144,6 @@
   var productTotalNode = document.querySelector('[data-total]');
   var shippingNode = document.querySelector('[data-shipping-cost]');
   var payableNode = document.querySelector('[data-payable]');
-  var weightNode = document.querySelector('[data-weight]');
 
   function updateCurrentSelection() {
     var key = selectionKey(selections);
@@ -195,9 +190,6 @@
     productTotalNode.textContent = 'Product subtotal: ' + money(totals.productTotal);
     shippingNode.textContent = 'Shipping cost: ' + money(totals.shippingCost);
     payableNode.textContent = 'Total payable: ' + money(totals.payable);
-    weightNode.textContent = totals.totalQuantity
-      ? 'Order weight: ' + formatWeight(totals.totalWeight) + ' · shipping tier: ' + totals.chargedKg + ' kg'
-      : 'Order weight: 0 g';
   }
 
   function changeCurrentQuantity(amount) {
@@ -263,7 +255,6 @@
         itemLines.join('\n'),
         'Product subtotal: ' + money(totals.productTotal),
         'Shipping area: ' + areaLabel,
-        'Order weight: ' + formatWeight(totals.totalWeight) + ' (shipping tier ' + totals.chargedKg + ' kg)',
         'Shipping cost: ' + money(totals.shippingCost),
         'Total payable: ' + money(totals.payable),
         '',
