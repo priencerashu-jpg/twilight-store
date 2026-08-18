@@ -3,7 +3,6 @@
   if (!shell) return;
 
   shell.outerHTML = [
-    '<div class="announcement"><span>🚚 Shipping from ৳80 inside Dhaka and ৳110 outside Dhaka</span><span>Quality is our first priority</span><a href="tel:+8801729624403">☎ +880 1729-624403</a></div>',
     '<header class="site-header">',
       '<a class="brand" href="../../home.html"><img src="../../assets/images/twilight-logo.png" alt="Twilight Market"><small>Quality is our first priority</small></a>',
       '<button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false">☰</button>',
@@ -19,17 +18,17 @@
       '<section class="description-panel"><div class="details-copy"><span>PRODUCT INFORMATION</span><h2>Product Details</h2><p data-description></p><div class="feature-list" data-features></div></div><div class="specification-card"><span>SPECIFICATIONS</span><h2>At a glance</h2><dl data-specs></dl></div></section>',
       '<section class="order-steps" aria-label="How to order"><div><b>1</b><span><strong>Choose options</strong><small>Select colors and quantities.</small></span></div><div><b>2</b><span><strong>Add to cart</strong><small>Your cart stays on this device without an account.</small></span></div><div><b>3</b><span><strong>Review and order</strong><small>Select cart items, check the total and send on WhatsApp.</small></span></div></section>',
     '</main>',
-    '<footer class="main-footer"><div class="footer-brand"><img src="../../assets/images/twilight-logo.png" alt="Twilight Market"><p>Quality is our first priority.</p></div><div><strong>Explore</strong><a href="../../home.html">Home</a><a href="../../products.html">Products</a><a href="../../about.html">About Us</a><a href="../../contact.html">Contact</a><a href="../../cart.html">Cart</a></div><div><strong>WhatsApp Orders</strong><a href="https://wa.me/8801729624403">+880 1729-624403</a><a href="https://wa.me/8801410395694">+880 1410-395694</a><span>Mirpur-1, Dhaka</span></div><small>© <span data-year>2026</span> Twilight Market. All rights reserved.</small></footer>'
+    '<footer class="main-footer"><div class="footer-brand"><img src="../../assets/images/twilight-logo.png" alt="Twilight Market"><p>Quality is our first priority.</p></div><div><strong>Explore</strong><a href="../../home.html">Home</a><a href="../../products.html">Products</a><a href="../../about.html">About Us</a><a href="../../contact.html">Contact</a><a href="../../cart.html">Cart</a></div><div><strong>WhatsApp Orders</strong><a href="https://wa.me/8801729624403">+880 1729-624403</a><a href="https://wa.me/8801410395694">+880 1410-395694</a><span>Mirpur-1, Dhaka</span></div><small>© <span data-year>2026</span> Twilight Market. All rights reserved.</small><span class="product-visit-counter" data-product-visitor aria-live="polite"></span></footer>'
   ].join('');
 
   var data = document.createElement('script');
-  data.src = '../../assets/data.js?v=20260818-3';
+  data.src = '../../assets/data.js?v=20260818-4';
   data.onload = function () {
     var cart = document.createElement('script');
-    cart.src = '../../assets/cart.js?v=20260818-3';
+    cart.src = '../../assets/cart.js?v=20260818-4';
     cart.onload = function () {
       var product = document.createElement('script');
-      product.src = '../../assets/product-v2.js?v=20260818-3';
+      product.src = '../../assets/product-v2.js?v=20260818-4';
       document.body.appendChild(product);
     };
     document.body.appendChild(cart);
@@ -37,6 +36,6 @@
   document.body.appendChild(data);
 
   var site = document.createElement('script');
-  site.src = '../../assets/site.js?v=20260818-3';
+  site.src = '../../assets/site.js?v=20260818-4';
   document.body.appendChild(site);
 }());
