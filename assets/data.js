@@ -3,9 +3,9 @@ window.TWILIGHT_PRODUCTS = {
     "name": "Twilight Rechargeable Turbo Fan",
     "shortName": "Rechargeable Turbo Fan",
     "category": "Gadgets & Electronics",
-    "price": 400,
+    "price": 500,
     "delivery": "Shipping from ৳80 inside Dhaka or ৳110 outside Dhaka; add ৳25 for each additional kg.",
-    "badge": "৳200 OFF",
+    "badge": "৳100 OFF",
     "summary": "A compact rechargeable fan with five wind speeds, a digital display and a foldable body.",
     "description": "Stay comfortable at home, at work or while travelling. This compact turbo fan combines strong airflow with an ultra-quiet brushless motor, a clear digital display and a foldable design that works in your hand or on a table.",
     "images": [
@@ -22,7 +22,7 @@ window.TWILIGHT_PRODUCTS = {
     "specs": [
       [
         "Price",
-        "৳400 (was ৳600)"
+        "৳500 (was ৳600)"
       ],
       [
         "Delivery",
@@ -43,10 +43,6 @@ window.TWILIGHT_PRODUCTS = {
       [
         "Available colors",
         "Mint Green and White"
-      ],
-      [
-        "Shipping weight",
-        "330 g per fan"
       ]
     ],
     "variants": [
@@ -105,10 +101,6 @@ window.TWILIGHT_PRODUCTS = {
       [
         "Packaging",
         "Standard Pack or Small Pack"
-      ],
-      [
-        "Shipping weight",
-        "300 g per raincoat"
       ]
     ],
     "variants": [
@@ -180,10 +172,6 @@ window.TWILIGHT_PRODUCTS = {
       [
         "Available colors",
         "Blue and Transparent White"
-      ],
-      [
-        "Shipping weight",
-        "300 g per raincoat"
       ]
     ],
     "variants": [
@@ -247,10 +235,6 @@ window.TWILIGHT_PRODUCTS = {
       [
         "Available colors",
         "Mint, Sky Blue, Purple and Pink"
-      ],
-      [
-        "Shipping weight",
-        "300 g shipping weight"
       ]
     ],
     "variants": [
@@ -313,10 +297,6 @@ window.TWILIGHT_PRODUCTS = {
       [
         "Ordering",
         "Select both colors before checkout"
-      ],
-      [
-        "Shipping weight",
-        "630 g per combo"
       ]
     ],
     "variants": [
@@ -382,10 +362,6 @@ window.TWILIGHT_PRODUCTS = {
       [
         "Available colors",
         "Pink, Green, Blue, Orange and Grass Green"
-      ],
-      [
-        "Shipping weight",
-        "990 g per set"
       ]
     ],
     "variants": [
@@ -449,10 +425,6 @@ window.TWILIGHT_PRODUCTS = {
       [
         "Available colors",
         "Off-white, Black and Light Green"
-      ],
-      [
-        "Shipping weight",
-        "990 g per set"
       ]
     ],
     "variants": [
