@@ -3,9 +3,9 @@ window.TWILIGHT_PRODUCTS = {
     "name": "Twilight Rechargeable Turbo Fan",
     "shortName": "Rechargeable Turbo Fan",
     "category": "Gadgets & Electronics",
-    "price": 400,
+    "price": 500,
     "delivery": "Shipping from ৳80 inside Dhaka or ৳110 outside Dhaka; add ৳25 for each additional kg.",
-    "badge": "৳200 OFF",
+    "badge": "৳100 OFF",
     "summary": "A compact rechargeable fan with five wind speeds, a digital display and a foldable body.",
     "description": "Stay comfortable at home, at work or while travelling. This compact turbo fan combines strong airflow with an ultra-quiet brushless motor, a clear digital display and a foldable design that works in your hand or on a table.",
     "images": [
@@ -22,7 +22,7 @@ window.TWILIGHT_PRODUCTS = {
     "specs": [
       [
         "Price",
-        "৳400 (was ৳600)"
+        "৳500 (was ৳600)"
       ],
       [
         "Delivery",

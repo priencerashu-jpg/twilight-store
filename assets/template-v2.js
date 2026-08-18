@@ -23,7 +23,7 @@
   ].join('');
 
   var data = document.createElement('script');
-  data.src = '../../assets/data.js?v=20260818-1';
+  data.src = '../../assets/data.js?v=20260818-2';
   data.onload = function () {
     var product = document.createElement('script');
     product.src = '../../assets/product-v2.js?v=20260818-1';
