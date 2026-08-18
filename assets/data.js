@@ -287,7 +287,7 @@ window.TWILIGHT_PRODUCTS = {
       "Separate raincoat and fan color choices",
       "Practical for commuting and travel",
       "Ready for rainy and hot weather",
-      "Nationwide free home delivery"
+      "Clear weight-based shipping rates"
     ],
     "specs": [
       [
