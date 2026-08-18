@@ -1890,3 +1890,65 @@ select:focus-visible, summary:focus-visible {
   .premium-product-card:hover, .premium-product-card:hover .premium-product-image img,
   .contact-options > a:hover { transform: none; }
 }
+
+
+/* Team and social presence */
+.team-section { background: linear-gradient(180deg, #fff, var(--cream)); }
+.team-section .premium-heading { max-width: 720px; margin-inline: auto; text-align: center; }
+.team-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; }
+.team-card { overflow: hidden; border: 1px solid var(--line); border-radius: 22px; background: #fff; box-shadow: 0 18px 50px rgba(22, 46, 35, .07); }
+.team-portrait {
+  aspect-ratio: 4 / 5;
+  display: grid;
+  place-items: center;
+  position: relative;
+  overflow: hidden;
+  color: #f4e5c6;
+  background:
+    radial-gradient(circle at 50% 34%, rgba(215, 184, 125, .28), transparent 17%),
+    linear-gradient(145deg, #174e3a, #082d20 72%);
+}
+.team-portrait::before {
+  content: "";
+  width: 72%;
+  aspect-ratio: 1;
+  position: absolute;
+  bottom: -27%;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, .06);
+}
+.team-portrait::after {
+  content: "";
+  inset: 16px;
+  position: absolute;
+  border: 1px solid rgba(225, 197, 143, .32);
+  border-radius: 16px;
+}
+.team-portrait span { z-index: 1; font: 600 clamp(46px, 6vw, 78px)/1 "Playfair Display", Georgia, serif; letter-spacing: .03em; }
+.team-card-copy { padding: 28px; }
+.team-card-copy h3 { margin: 0 0 8px; color: var(--green-dark); font: 600 27px/1.15 "Playfair Display", Georgia, serif; }
+.team-card-copy strong { display: block; color: var(--gold); font-size: 10px; letter-spacing: .09em; text-transform: uppercase; }
+.team-card-copy p { margin: 15px 0 0; color: var(--muted); font-size: 12px; line-height: 1.75; }
+.contact-presence { padding-top: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.contact-presence > * { min-height: 220px; padding: 32px; border: 1px solid var(--line); border-radius: 18px; background: var(--cream); }
+.contact-presence > a { transition: transform .2s ease, border-color .2s ease; }
+.contact-presence > a:hover { transform: translateY(-4px); border-color: #cbb994; }
+.contact-presence span { color: var(--gold); font-size: 9px; font-weight: 800; letter-spacing: .13em; }
+.contact-presence h2 { margin: 22px 0 10px; color: var(--green-dark); font-size: 31px; }
+.contact-presence p { color: var(--muted); font-size: 13px; line-height: 1.7; }
+.contact-presence b { display: inline-flex; margin-top: 15px; color: var(--green); font-size: 11px; font-weight: 800; }
+.footer-social-link { color: #e4c78f !important; font-weight: 800; }
+@media (max-width: 780px) {
+  .team-grid { grid-template-columns: 1fr; max-width: 520px; margin-inline: auto; }
+  .team-card { display: grid; grid-template-columns: 42% 1fr; align-items: stretch; }
+  .team-portrait { aspect-ratio: auto; min-height: 310px; }
+  .team-card-copy { align-self: center; }
+  .contact-presence { grid-template-columns: 1fr; }
+}
+@media (max-width: 480px) {
+  .team-card { grid-template-columns: 1fr; }
+  .team-portrait { aspect-ratio: 4 / 3; min-height: 0; }
+  .team-card-copy { padding: 24px; }
+  .team-card-copy h3 { font-size: 25px; }
+  .contact-presence { padding-inline: 12px; }
+}
