@@ -15,10 +15,8 @@
     });
   }
 
-  var visitorTarget = document.querySelector('.announcement span:nth-child(2)');
+  var visitorTarget = document.querySelector('[data-product-visitor]');
   if (visitorTarget) {
-    visitorTarget.className = 'visitor-counter';
-    visitorTarget.textContent = '';
     var visitorImage = document.createElement('img');
     visitorImage.src = 'https://hits.sh/twilight-market.priencerashu.chatgpt.site.svg?style=flat-square&label=Website%20visits&color=0d5c35&labelColor=071128';
     visitorImage.alt = 'Website visit count';
