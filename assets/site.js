@@ -1,18 +1,17 @@
 (function () {
-  var isProductPage = document.body.hasAttribute('data-product');
-  var pathPrefix = isProductPage ? '../../' : '';
-
   var toggle = document.querySelector('.menu-toggle');
   var nav = document.querySelector('.site-nav');
   if (toggle && nav) {
     toggle.addEventListener('click', function () {
       var open = toggle.getAttribute('aria-expanded') === 'true';
       toggle.setAttribute('aria-expanded', String(!open));
+      toggle.setAttribute('aria-label', open ? 'Open menu' : 'Close menu');
       nav.classList.toggle('open', !open);
     });
     nav.querySelectorAll('a').forEach(function (link) {
       link.addEventListener('click', function () {
         toggle.setAttribute('aria-expanded', 'false');
+        toggle.setAttribute('aria-label', 'Open menu');
         nav.classList.remove('open');
       });
     });
@@ -21,7 +20,7 @@
   var visitorTarget = document.querySelector('[data-product-visitor]');
   if (visitorTarget) {
     var visitorImage = document.createElement('img');
-    visitorImage.src = 'https://hits.sh/twilight-market.priencerashu.chatgpt.site.svg?style=flat-square&label=Website%20visits&color=123c2e&labelColor=202722';
+    visitorImage.src = 'https://hits.sh/twilight-market.priencerashu.chatgpt.site.svg?style=flat-square&label=Website%20visits&color=123b2d&labelColor=0a241b';
     visitorImage.alt = 'Website visit count';
     visitorImage.loading = 'eager';
     visitorImage.addEventListener('error', function () {
@@ -34,98 +33,86 @@
     node.textContent = new Date().getFullYear();
   });
 
-  var searchToggle = document.querySelector('[data-search-toggle]');
-  var searchOverlay;
-  var searchInput;
+  var consentKey = 'twilight-market-analytics-consent';
+  var privacyPrefix = document.body && document.body.hasAttribute('data-product') ? '../../' : '';
 
-  function closeSearch() {
-    if (!searchOverlay) return;
-    searchOverlay.hidden = true;
-    document.body.classList.remove('search-open');
-    if (searchToggle) searchToggle.setAttribute('aria-expanded', 'false');
+  function saveConsent(value) {
+    try { window.localStorage.setItem(consentKey, value); } catch (error) {}
   }
 
-  function filterProducts(query) {
-    var grid = document.querySelector('[data-product-grid]');
-    if (!grid) return false;
-    var normalized = (query || '').trim().toLowerCase();
-    var cards = Array.prototype.slice.call(grid.querySelectorAll('[data-product-card]'));
-    var visible = 0;
-    cards.forEach(function (card) {
-      var matches = !normalized || card.textContent.toLowerCase().indexOf(normalized) !== -1;
-      card.hidden = !matches;
-      if (matches) visible += 1;
-    });
-    var result = document.querySelector('[data-product-results]');
-    var empty = document.querySelector('[data-search-empty]');
-    if (result) result.textContent = normalized ? visible + (visible === 1 ? ' matching product' : ' matching products') : cards.length + ' products';
-    if (empty) empty.hidden = visible !== 0;
-    return true;
+  function readConsent() {
+    try { return window.localStorage.getItem(consentKey); } catch (error) { return null; }
   }
 
-  function createSearch() {
-    if (searchOverlay) return;
-    searchOverlay = document.createElement('div');
-    searchOverlay.className = 'site-search-overlay';
-    searchOverlay.hidden = true;
-    searchOverlay.innerHTML = '<div class="site-search-dialog" role="dialog" aria-modal="true" aria-label="Search products"><button type="button" class="search-close" aria-label="Close search">×</button><span>SEARCH THE COLLECTION</span><h2>What are you looking for?</h2><form><input type="search" name="q" autocomplete="off" placeholder="Try raincoat, fan, gift set..." aria-label="Search products"><button type="submit">Search</button></form><small>Search by product, category or feature.</small></div>';
-    document.body.appendChild(searchOverlay);
-    searchInput = searchOverlay.querySelector('input');
-    searchOverlay.querySelector('.search-close').addEventListener('click', closeSearch);
-    searchOverlay.addEventListener('click', function (event) {
-      if (event.target === searchOverlay) closeSearch();
+  function loadTikTokPixel() {
+    if (window.__twilightTikTokLoaded) return;
+    window.__twilightTikTokLoaded = true;
+    !function (w, d, t) {
+      w.TiktokAnalyticsObject = t;
+      var ttq = w[t] = w[t] || [];
+      ttq.methods = ['page','track','identify','instances','debug','on','off','once','ready','alias','group','enableCookie','disableCookie','holdConsent','revokeConsent','grantConsent'];
+      ttq.setAndDefer = function (object, method) {
+        object[method] = function () { object.push([method].concat(Array.prototype.slice.call(arguments, 0))); };
+      };
+      for (var i = 0; i < ttq.methods.length; i += 1) ttq.setAndDefer(ttq, ttq.methods[i]);
+      ttq.instance = function (id) {
+        var instance = ttq._i[id] || [];
+        for (var j = 0; j < ttq.methods.length; j += 1) ttq.setAndDefer(instance, ttq.methods[j]);
+        return instance;
+      };
+      ttq.load = function (id, options) {
+        var source = 'https://analytics.tiktok.com/i18n/pixel/events.js';
+        ttq._i = ttq._i || {};
+        ttq._i[id] = [];
+        ttq._i[id]._u = source;
+        ttq._t = ttq._t || {};
+        ttq._t[id] = +new Date();
+        ttq._o = ttq._o || {};
+        ttq._o[id] = options || {};
+        var script = d.createElement('script');
+        script.type = 'text/javascript';
+        script.async = true;
+        script.src = source + '?sdkid=' + id + '&lib=' + t;
+        var first = d.getElementsByTagName('script')[0];
+        first.parentNode.insertBefore(script, first);
+      };
+      ttq.load('DA016D3C77UE58FDCOHG');
+      ttq.page();
+    }(window, document, 'ttq');
+  }
+
+  function closeConsent() {
+    var existing = document.querySelector('[data-consent-banner]');
+    if (existing) existing.remove();
+  }
+
+  function showConsent() {
+    closeConsent();
+    var banner = document.createElement('aside');
+    banner.className = 'privacy-notice';
+    banner.setAttribute('data-consent-banner', '');
+    banner.setAttribute('role', 'dialog');
+    banner.setAttribute('aria-label', 'Analytics preferences');
+    banner.innerHTML = '<div><span>YOUR PRIVACY</span><strong>Choose how this website uses analytics.</strong><p>Your cart works without an account. TikTok analytics loads only if you allow it. <a href="' + privacyPrefix + 'privacy.html">Read our Privacy Policy</a>.</p></div><div class="privacy-actions"><button type="button" data-consent-decline>Continue without analytics</button><button type="button" data-consent-allow>Allow analytics</button></div>';
+    document.body.appendChild(banner);
+    banner.querySelector('[data-consent-allow]').addEventListener('click', function () {
+      saveConsent('allow');
+      closeConsent();
+      loadTikTokPixel();
+      if (window.ttq && typeof window.ttq.grantConsent === 'function') window.ttq.grantConsent();
     });
-    searchOverlay.querySelector('form').addEventListener('submit', function (event) {
-      event.preventDefault();
-      var query = searchInput.value.trim();
-      if (filterProducts(query)) {
-        var nextUrl = query ? 'products.html?q=' + encodeURIComponent(query) : 'products.html';
-        window.history.replaceState({}, '', nextUrl);
-        closeSearch();
-      } else {
-        window.location.href = pathPrefix + 'products.html' + (query ? '?q=' + encodeURIComponent(query) : '');
-      }
+    banner.querySelector('[data-consent-decline]').addEventListener('click', function () {
+      saveConsent('deny');
+      if (window.ttq && typeof window.ttq.revokeConsent === 'function') window.ttq.revokeConsent();
+      closeConsent();
     });
   }
 
-  if (searchToggle) {
-    searchToggle.setAttribute('aria-expanded', 'false');
-    searchToggle.addEventListener('click', function () {
-      createSearch();
-      searchOverlay.hidden = false;
-      document.body.classList.add('search-open');
-      searchToggle.setAttribute('aria-expanded', 'true');
-      window.setTimeout(function () { searchInput.focus(); }, 20);
-    });
-  }
-
-  document.addEventListener('keydown', function (event) {
-    if (event.key === 'Escape') closeSearch();
+  document.querySelectorAll('[data-cookie-settings]').forEach(function (button) {
+    button.addEventListener('click', showConsent);
   });
 
-  var initialQuery = '';
-  try { initialQuery = new URLSearchParams(window.location.search).get('q') || ''; } catch (error) {}
-  if (document.querySelector('[data-product-grid]')) filterProducts(initialQuery);
-  var clearSearch = document.querySelector('[data-clear-search]');
-  if (clearSearch) {
-    clearSearch.addEventListener('click', function () {
-      filterProducts('');
-      window.history.replaceState({}, '', 'products.html');
-    });
-  }
-
-  var COOKIE_KEY = 'twilight-cookie-notice-v1';
-  var cookieAccepted = false;
-  try { cookieAccepted = window.localStorage.getItem(COOKIE_KEY) === 'accepted'; } catch (error) {}
-  if (!cookieAccepted) {
-    var notice = document.createElement('aside');
-    notice.className = 'cookie-notice';
-    notice.setAttribute('aria-label', 'Privacy notice');
-    notice.innerHTML = '<div><strong>Your privacy at Twilight</strong><p>This site uses browser storage to remember your cart and TikTok Pixel to understand website visits.</p></div><a href="' + pathPrefix + 'privacy.html">Learn more</a><button type="button">Understood</button>';
-    document.body.appendChild(notice);
-    notice.querySelector('button').addEventListener('click', function () {
-      try { window.localStorage.setItem(COOKIE_KEY, 'accepted'); } catch (error) {}
-      notice.remove();
-    });
-  }
+  var consent = readConsent();
+  if (consent === 'allow') loadTikTokPixel();
+  else if (consent !== 'deny') showConsent();
 }());
