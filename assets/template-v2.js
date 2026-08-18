@@ -22,13 +22,13 @@
   ].join('');
 
   var data = document.createElement('script');
-  data.src = '../../assets/data.js?v=20260818-4';
+  data.src = '../../assets/data.js?v=20260818-5';
   data.onload = function () {
     var cart = document.createElement('script');
-    cart.src = '../../assets/cart.js?v=20260818-4';
+    cart.src = '../../assets/cart.js?v=20260818-5';
     cart.onload = function () {
       var product = document.createElement('script');
-      product.src = '../../assets/product-v2.js?v=20260818-4';
+      product.src = '../../assets/product-v2.js?v=20260818-5';
       document.body.appendChild(product);
     };
     document.body.appendChild(cart);
@@ -36,6 +36,6 @@
   document.body.appendChild(data);
 
   var site = document.createElement('script');
-  site.src = '../../assets/site.js?v=20260818-4';
+  site.src = '../../assets/site.js?v=20260818-5';
   document.body.appendChild(site);
 }());
