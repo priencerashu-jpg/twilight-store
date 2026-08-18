@@ -1,10 +1,11 @@
 (function () {
   var form = document.querySelector('[data-contact-form]');
   if (!form) return;
-  var errorNode = document.querySelector('[data-contact-error]');
+  var error = document.querySelector('[data-contact-error]');
 
   form.addEventListener('submit', function (event) {
     event.preventDefault();
+    if (!form.reportValidity()) return;
     var values = {
       name: form.elements.name.value.trim(),
       phone: form.elements.phone.value.trim(),
@@ -13,12 +14,12 @@
       message: form.elements.message.value.trim()
     };
     if (!values.name || !values.phone || !values.reason || !values.message) {
-      errorNode.textContent = 'Enter your name, phone number, reason for contact and message.';
+      error.textContent = 'Please complete your name, phone number, reason and message.';
       return;
     }
-    errorNode.textContent = '';
+    error.textContent = '';
     var lines = [
-      'Hello Twilight Market, I would like support.',
+      'Hello Twilight Market, I am contacting you through the website.',
       '',
       'Name: ' + values.name,
       'Phone: ' + values.phone,
