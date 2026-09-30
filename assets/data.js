@@ -3,8 +3,10 @@ window.TWILIGHT_PRODUCTS = {
     "name": "Twilight Rechargeable Turbo Fan",
     "shortName": "Rechargeable Turbo Fan",
     "category": "Gadgets & Electronics",
-    "price": 500,
-    "delivery": "Shipping from ৳80 inside Dhaka or ৳110 outside Dhaka; add ৳25 for each additional kg.",
+    "price": 600,
+    "unitLabel": "per piece",
+    "freeDelivery": true,
+    "delivery": "Free home delivery anywhere in Bangladesh.",
     "badge": "PORTABLE COOLING",
     "summary": "A compact rechargeable fan with five wind speeds, a digital display and a foldable body.",
     "description": "Stay comfortable at home, at work or while travelling. This compact turbo fan combines strong airflow with an ultra-quiet brushless motor, a clear digital display and a foldable design that works in your hand or on a table.",
@@ -22,11 +24,11 @@ window.TWILIGHT_PRODUCTS = {
     "specs": [
       [
         "Price",
-        "৳500"
+        "৳600"
       ],
       [
         "Delivery",
-        "Inside Dhaka ৳80; outside Dhaka ৳110; +৳25 per additional kg"
+        "Free home delivery across Bangladesh"
       ],
       [
         "Battery",
@@ -61,8 +63,10 @@ window.TWILIGHT_PRODUCTS = {
     "name": "Twilight Kids EVA Raincoat",
     "shortName": "Kids EVA Raincoat",
     "category": "Rain Essentials",
-    "price": 300,
-    "delivery": "Shipping from ৳80 inside Dhaka or ৳110 outside Dhaka; add ৳25 for each additional kg.",
+    "price": 400,
+    "unitLabel": "per piece",
+    "freeDelivery": true,
+    "delivery": "Free home delivery anywhere in Bangladesh.",
     "badge": "RAIN ESSENTIAL",
     "summary": "A soft, lightweight and reusable EVA raincoat made for school days, travel and sudden rain.",
     "description": "Keep children comfortably covered on rainy days with a soft EVA raincoat that is easy to fold, carry and reuse. The hooded, button-front design gives practical coverage without feeling heavy.",
@@ -80,11 +84,11 @@ window.TWILIGHT_PRODUCTS = {
     "specs": [
       [
         "Price",
-        "৳300"
+        "৳400"
       ],
       [
         "Delivery",
-        "Inside Dhaka ৳80; outside Dhaka ৳110; +৳25 per additional kg"
+        "Free home delivery across Bangladesh"
       ],
       [
         "Material",
@@ -132,8 +136,10 @@ window.TWILIGHT_PRODUCTS = {
     "name": "Twilight Adult EVA Raincoat",
     "shortName": "Adult EVA Raincoat",
     "category": "Rain Essentials",
-    "price": 350,
-    "delivery": "Shipping from ৳80 inside Dhaka or ৳110 outside Dhaka; add ৳25 for each additional kg.",
+    "price": 450,
+    "unitLabel": "per piece",
+    "freeDelivery": true,
+    "delivery": "Free home delivery anywhere in Bangladesh.",
     "badge": "RAIN ESSENTIAL",
     "summary": "A lightweight hooded adult raincoat with long coverage and a comfortable unisex fit.",
     "description": "A practical reusable raincoat for commuting, shopping and everyday travel. The long hooded design helps protect your clothes from rain while the lightweight EVA material folds easily into a bag when the weather clears.",
@@ -151,11 +157,11 @@ window.TWILIGHT_PRODUCTS = {
     "specs": [
       [
         "Price",
-        "৳350"
+        "৳450"
       ],
       [
         "Delivery",
-        "Inside Dhaka ৳80; outside Dhaka ৳110; +৳25 per additional kg"
+        "Free home delivery across Bangladesh"
       ],
       [
         "Material",
@@ -190,8 +196,10 @@ window.TWILIGHT_PRODUCTS = {
     "name": "Twilight Transparent Floral Umbrella",
     "shortName": "Transparent Floral Umbrella",
     "category": "Rain Essentials",
-    "price": 550,
-    "delivery": "Shipping from ৳80 inside Dhaka or ৳110 outside Dhaka; add ৳25 for each additional kg.",
+    "price": 650,
+    "unitLabel": "per piece",
+    "freeDelivery": true,
+    "delivery": "Free home delivery anywhere in Bangladesh.",
     "badge": "COMPACT DESIGN",
     "summary": "A transparent cherry-blossom umbrella with a compact matching bottle-style case.",
     "description": "Bring a cheerful look to rainy days with a transparent floral umbrella that is easy to fold and carry. Each color has a matching edge, handle and compact bottle-style storage case.",
@@ -214,11 +222,11 @@ window.TWILIGHT_PRODUCTS = {
     "specs": [
       [
         "Price",
-        "৳550"
+        "৳650"
       ],
       [
         "Delivery",
-        "Inside Dhaka ৳80; outside Dhaka ৳110; +৳25 per additional kg"
+        "Free home delivery across Bangladesh"
       ],
       [
         "Design",
@@ -255,8 +263,10 @@ window.TWILIGHT_PRODUCTS = {
     "name": "Adult Raincoat + Turbo Fan Smart Combo",
     "shortName": "Smart Weather Combo",
     "category": "Combo Offer",
-    "price": 899,
-    "delivery": "Shipping from ৳80 inside Dhaka or ৳110 outside Dhaka; add ৳25 for each additional kg.",
+    "price": 999,
+    "unitLabel": "per set",
+    "freeDelivery": true,
+    "delivery": "Free home delivery anywhere in Bangladesh.",
     "badge": "SEASONAL SET",
     "summary": "One adult EVA raincoat plus one rechargeable turbo fan in a practical all-weather value set.",
     "description": "Be ready for both rain and heat with two useful everyday products in one set. Choose the adult raincoat and turbo-fan colors separately before sending your complete order through WhatsApp.",
@@ -271,16 +281,16 @@ window.TWILIGHT_PRODUCTS = {
       "Separate raincoat and fan color choices",
       "Practical for commuting and travel",
       "Ready for rainy and hot weather",
-      "Clear nationwide shipping rates"
+      "Free home delivery across Bangladesh"
     ],
     "specs": [
       [
         "Combo price",
-        "৳899"
+        "৳999"
       ],
       [
         "Delivery",
-        "Inside Dhaka ৳80; outside Dhaka ৳110; +৳25 per additional kg"
+        "Free home delivery across Bangladesh"
       ],
       [
         "Raincoat",
@@ -322,8 +332,10 @@ window.TWILIGHT_PRODUCTS = {
     "name": "Premium Coral Fleece Towel Gift Set",
     "shortName": "Towel Gift Set",
     "category": "Home & Lifestyle",
-    "price": 899,
-    "delivery": "Shipping from ৳80 inside Dhaka or ৳110 outside Dhaka; add ৳25 for each additional kg.",
+    "price": 999,
+    "unitLabel": "per set",
+    "freeDelivery": true,
+    "delivery": "Free home delivery anywhere in Bangladesh.",
     "badge": "GIFT-READY SET",
     "summary": "One large bath towel and two face towels arranged in premium gift packaging.",
     "description": "A soft and highly absorbent three-piece coral fleece towel set presented in a premium gift box. It is suitable for daily family use and makes a thoughtful wedding, birthday or corporate gift.",
@@ -341,11 +353,11 @@ window.TWILIGHT_PRODUCTS = {
     "specs": [
       [
         "Set price",
-        "৳899"
+        "৳999"
       ],
       [
         "Delivery",
-        "Inside Dhaka ৳80; outside Dhaka ৳110; +৳25 per additional kg"
+        "Free home delivery across Bangladesh"
       ],
       [
         "Set contents",
@@ -384,6 +396,7 @@ window.TWILIGHT_PRODUCTS = {
     "shortName": "Travel Tea Set",
     "category": "Home & Lifestyle",
     "price": 1899,
+    "unitLabel": "per set",
     "delivery": "Shipping from ৳80 inside Dhaka or ৳110 outside Dhaka; add ৳25 for each additional kg.",
     "badge": "COMPLETE SET",
     "summary": "A complete ceramic tea set with four cups, tray, cloth, tongs and a protective carrying case.",

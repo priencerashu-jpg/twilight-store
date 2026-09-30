@@ -426,6 +426,31 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
 .shop-card-copy footer { margin-top: 18px; padding-top: 15px; display: flex; align-items: center; justify-content: space-between; gap: 10px; border-top: 1px solid var(--line); }
 .shop-card-copy footer strong { color: var(--green); font-size: 21px; }
 .shop-card-copy footer a { font-size: 10px; font-weight: 700; }
+.card-price { display: grid; gap: 3px; }
+.card-price small { color: #63746b; font-size: 9px; font-weight: 700; letter-spacing: .02em; }
+
+/* Crawlable product content shown before the interactive product view loads. */
+.seo-product-fallback {
+  width: min(1160px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 46px 0 76px;
+}
+.seo-product-fallback nav { margin-bottom: 22px; color: var(--muted); font-size: 13px; }
+.seo-product-fallback article {
+  padding: 32px;
+  display: grid;
+  grid-template-columns: minmax(280px, .9fr) minmax(320px, 1.1fr);
+  gap: 48px;
+  border: 1px solid var(--line);
+  background: #fff;
+  box-shadow: var(--soft-shadow);
+}
+.seo-product-fallback img { width: 100%; aspect-ratio: 1; object-fit: contain; background: #f5f4ef; }
+.seo-product-fallback h1 { margin: 0 0 14px; color: var(--green-dark); font: 600 clamp(34px, 4vw, 54px)/1.06 var(--serif); }
+.seo-product-fallback .fallback-price { margin: 0 0 10px; color: var(--green); font-size: 30px; font-weight: 700; }
+.seo-product-fallback .fallback-delivery { color: var(--green-dark); font-weight: 700; }
+.seo-product-fallback p, .seo-product-fallback li { color: var(--muted); line-height: 1.7; }
+.seo-product-fallback ul { padding-left: 20px; }
 .shop-empty { padding: 80px 20px; text-align: center; }
 .shop-empty h2 { color: var(--green-dark); font: 600 34px var(--serif); }
 .shop-empty p { color: var(--muted); }
@@ -840,6 +865,9 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
   .shop-card-image { aspect-ratio: 1; }
   .shop-card-copy h2, .shop-card-copy p { min-height: 0; }
   .shop-support { padding: 42px 18px; align-items: stretch; flex-direction: column; }
+  .seo-product-fallback { width: min(100% - 24px, 1160px); padding: 24px 0 52px; }
+  .seo-product-fallback article { padding: 16px; grid-template-columns: 1fr; gap: 24px; }
+  .seo-product-fallback h1 { font-size: 36px; }
 
   .about-story { gap: 20px; }
   .mission-grid { padding-top: 10px; }

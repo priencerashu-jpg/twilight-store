@@ -179,6 +179,7 @@ button { cursor: pointer; }
 .detail-price small { color: var(--muted); font-size: 11px; }
 .summary { color: var(--muted); line-height: 1.7; }
 .delivery-note { padding: 12px 13px; border-radius: 10px; color: var(--green-dark); background: var(--green-soft); font-size: 13px; font-weight: 750; }
+.shipping-area[hidden] { display: none !important; }
 .variant-stack { margin-top: 20px; display: grid; gap: 17px; }
 .variant-stack fieldset { margin: 0; padding: 0; border: 0; }
 .variant-stack legend { margin-bottom: 8px; font-size: 13px; }

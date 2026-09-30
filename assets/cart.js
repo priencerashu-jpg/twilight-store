@@ -16,6 +16,8 @@
       image: String(item.image || ''),
       choices: item.choices && typeof item.choices === 'object' ? item.choices : {},
       price: Math.max(0, Number(item.price) || 0),
+      unitLabel: String(item.unitLabel || 'per item'),
+      freeDelivery: item.freeDelivery === true,
       weightGrams: Math.max(0, Number(item.weightGrams) || 0),
       quantity: cleanQuantity(item.quantity),
       selected: item.selected !== false
@@ -76,6 +78,8 @@
         existing.quantity = Math.min(99, existing.quantity + incoming.quantity);
         existing.selected = true;
         existing.price = incoming.price;
+        existing.unitLabel = incoming.unitLabel;
+        existing.freeDelivery = incoming.freeDelivery;
         existing.weightGrams = incoming.weightGrams;
         existing.name = incoming.name;
         existing.image = incoming.image;
@@ -107,13 +111,17 @@
   function syncProducts(products) {
     var items = read();
     var changed = false;
+    var availableItems = items.filter(function (item) { return products && products[item.slug]; });
+    if (availableItems.length !== items.length) changed = true;
+    items = availableItems;
     items.forEach(function (item) {
       var product = products && products[item.slug];
-      if (!product) return;
       var nextImage = product.images && product.images[0] ? product.images[0] : item.image;
-      if (item.name !== product.name || item.price !== product.price || item.weightGrams !== product.weightGrams || item.image !== nextImage) {
+      if (item.name !== product.name || item.price !== product.price || item.unitLabel !== (product.unitLabel || 'per item') || item.freeDelivery !== (product.freeDelivery === true) || item.weightGrams !== product.weightGrams || item.image !== nextImage) {
         item.name = product.name;
         item.price = product.price;
+        item.unitLabel = product.unitLabel || 'per item';
+        item.freeDelivery = product.freeDelivery === true;
         item.weightGrams = product.weightGrams;
         item.image = nextImage;
         changed = true;
@@ -128,11 +136,15 @@
     var productTotal = selected.reduce(function (sum, item) {
       return sum + (Number(item.price) || 0) * cleanQuantity(item.quantity);
     }, 0);
-    var totalWeight = selected.reduce(function (sum, item) {
+    var chargeableItems = selected.filter(function (item) { return item.freeDelivery !== true; });
+    var totalWeight = chargeableItems.reduce(function (sum, item) {
       return sum + (Number(item.weightGrams) || 0) * cleanQuantity(item.quantity);
     }, 0);
-    var chargedKg = quantity ? Math.max(1, Math.ceil(totalWeight / 1000)) : 0;
-    var shippingCost = quantity ? (area === 'outside' ? 110 : 80) + Math.max(0, chargedKg - 1) * 25 : 0;
+    var chargeableQuantity = chargeableItems.reduce(function (sum, item) {
+      return sum + cleanQuantity(item.quantity);
+    }, 0);
+    var chargedKg = chargeableQuantity ? Math.max(1, Math.ceil(totalWeight / 1000)) : 0;
+    var shippingCost = chargeableQuantity ? (area === 'outside' ? 110 : 80) + Math.max(0, chargedKg - 1) * 25 : 0;
     return {
       selectedItems: selected,
       quantity: quantity,

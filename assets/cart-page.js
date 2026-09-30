@@ -47,7 +47,10 @@
     var totals = cartApi.calculate(items, currentArea());
     selectedCount.textContent = totals.quantity + (totals.quantity === 1 ? ' selected item' : ' selected items');
     productTotalNode.textContent = 'Product subtotal: ' + money(totals.productTotal);
-    shippingNode.textContent = 'Shipping cost: ' + money(totals.shippingCost);
+    var allSelectedFree = totals.quantity > 0 && totals.selectedItems.every(function (item) { return item.freeDelivery === true; });
+    var shippingArea = document.querySelector('.cart-shipping');
+    if (shippingArea) shippingArea.hidden = allSelectedFree;
+    shippingNode.textContent = allSelectedFree ? 'Delivery: Free across Bangladesh' : 'Shipping cost: ' + money(totals.shippingCost);
     payableNode.textContent = 'Total payable: ' + money(totals.payable);
     orderButtons.forEach(function (button) { button.disabled = totals.quantity === 0; });
     return totals;
@@ -115,7 +118,7 @@
       var choices = document.createElement('p');
       choices.textContent = optionText(item.choices);
       var unit = document.createElement('strong');
-      unit.textContent = money(item.price) + ' each';
+      unit.textContent = money(item.price) + ' ' + (item.unitLabel || 'per item') + (item.freeDelivery ? ' · Free delivery' : '');
       details.appendChild(name);
       details.appendChild(choices);
       details.appendChild(unit);
@@ -211,7 +214,7 @@
         '',
         'Product subtotal: ' + money(totals.productTotal),
         'Shipping area: ' + areaLabel,
-        'Shipping cost: ' + money(totals.shippingCost),
+        'Shipping cost: ' + (totals.shippingCost === 0 ? 'Free' : money(totals.shippingCost)),
         'Total payable: ' + money(totals.payable),
         '',
         'Customer name: ' + name,

@@ -47,7 +47,7 @@
     var chargedKg = totalQuantity ? Math.max(1, Math.ceil(totalWeight / 1000)) : 0;
     var area = document.querySelector('[name="shipping-area"]:checked');
     var insideDhaka = !area || area.value === 'inside';
-    var shippingCost = totalQuantity ? (insideDhaka ? 80 : 110) + Math.max(0, chargedKg - 1) * 25 : 0;
+    var shippingCost = product.freeDelivery ? 0 : (totalQuantity ? (insideDhaka ? 80 : 110) + Math.max(0, chargedKg - 1) * 25 : 0);
     return {
       totalQuantity: totalQuantity,
       productTotal: productTotal,
@@ -60,7 +60,6 @@
   }
 
 
-  document.title = product.name + ' | Twilight Market';
   document.querySelector('[data-product-name]').textContent = product.name;
   document.querySelector('[data-product-short]').textContent = product.shortName;
   document.querySelector('[data-badge]').textContent = product.badge;
@@ -68,7 +67,12 @@
   document.querySelector('[data-delivery]').textContent = product.delivery;
   document.querySelector('[data-description]').textContent = product.description;
   document.querySelector('[data-price]').textContent = money(product.price);
+  document.querySelector('[data-unit-label]').textContent = product.unitLabel || 'per item';
   document.querySelector('[data-gallery-price]').textContent = money(product.price);
+  if (product.freeDelivery) {
+    var shippingArea = document.querySelector('.shipping-area');
+    if (shippingArea) shippingArea.hidden = true;
+  }
   if (product.originalPrice) {
     document.querySelector('[data-original-price]').textContent = money(product.originalPrice);
   } else {
@@ -188,7 +192,7 @@
 
     var totals = calculateTotals();
     productTotalNode.textContent = 'Product subtotal: ' + money(totals.productTotal);
-    shippingNode.textContent = 'Shipping cost: ' + money(totals.shippingCost);
+    shippingNode.textContent = product.freeDelivery ? 'Delivery: Free across Bangladesh' : 'Shipping cost: ' + money(totals.shippingCost);
     payableNode.textContent = 'Total payable: ' + money(totals.payable);
   }
 
@@ -238,6 +242,8 @@
           image: product.images[0],
           choices: copySelections(item.choices),
           price: product.price,
+          unitLabel: product.unitLabel || 'per item',
+          freeDelivery: product.freeDelivery === true,
           weightGrams: product.weightGrams,
           quantity: item.quantity,
           selected: true
@@ -292,7 +298,7 @@
         itemLines.join('\n'),
         'Product subtotal: ' + money(totals.productTotal),
         'Shipping area: ' + areaLabel,
-        'Shipping cost: ' + money(totals.shippingCost),
+        'Shipping cost: ' + (product.freeDelivery ? 'Free' : money(totals.shippingCost)),
         'Total payable: ' + money(totals.payable),
         '',
         'Customer name: ' + name,
